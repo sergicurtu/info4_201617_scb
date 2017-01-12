@@ -72,7 +72,7 @@
 	<gap:plugin name="cordova-plugin-statusbar" source='npm' />
 	<gap:plugin name="cordova-plugin-google-analytics" source='npm' />
 	
-	<!-- no funciones des de novembre 2016 
+	<!-- no funciona des de novembre 2016 
 	<gap:plugin name="com.phonegap.plugin.statusbar" />
 	<gap:plugin name="com.adobe.plugins.gaplugin" /> 
 	-->
