@@ -1,5 +1,3 @@
-# info4_201617_scb
+# info4_201617_scb ( PONG_SCB )
 
-primer test
-
-l'objectiu és crear una apk per android
+L'objectiu és crear una apk per android
