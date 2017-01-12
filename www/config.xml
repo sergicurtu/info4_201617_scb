@@ -20,7 +20,8 @@
        Sergi Curtu
     </author>
 
-	<content src="index.html"/>
+    <!-- EN ARRENCAR L'APP LLLEGIRÀ L'ARXIU INDEX.HTML-->	
+    <content src="index.html"/>
  
     <feature name="http://api.phonegap.com/1.0/device" />
 	<feature name="http://api.phonegap.com/1.0/network"/>
