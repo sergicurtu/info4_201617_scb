@@ -7,173 +7,64 @@ $(document).on('deviceready', function() {
      var alcada_pantalla_CSS = window.innerHeight ;	// 616px 
      /////////////////////////////////////////////////////////
      
+     // REDIMENSIONEM EL CANVAS
+     var canvas = document.getElementById('canvas');
+     var ctx = canvas.getContext('2d');
+     ctx.canvas.width  = window.innerWidth;
+     ctx.canvas.height = window.innerHeight;
      
+	// centre pantalla ?
+	var centre_x = amplada_pantalla_CSS / 2 ;
+	var centre_y = alcada_pantalla_CSS / 2 ;  // var centre_y = window.innerHeight / 2 ; //
+		
+	// Quina posició la bola ? Temin present que la bola ocupa un espai 	// quina mida la bola ?
+	var mida_x_bola = amplada_pantalla_CSS * ( 10 / 100 ) ; 
+	var mida_y_bola = mida_x_bola ;  // 36 ;
+	var posicio_x_bola = centre_x - ( mida_x_bola / 2 ) ;
+	var posicio_y_bola = centre_y - ( mida_y_bola / 2 ) ;
+ 	
+ 	
 	document.addEventListener("offline", function() { 
-		alert("ara NO HI HA internet");
+		// alert("ara NO HI HA internet");
 	}, false);
  
 	$(window).resize(function() {
-		alert("has girat el dispositiu");
+		//alert("has girat el dispositiu");
 	}, false); 
 	
-	document.addEventListener('touchstart', function(e) {
-		// alert("Clicat") ;
-	});	
+	var nivell = 1 ;
+	draw(amplada_pantalla_CSS,alcada_pantalla_CSS,posicio_x_bola,posicio_y_bola,mida_x_bola,mida_y_bola,nivell)	 ;
 	
-	document.addEventListener('touchmove', function(e) {
-		// alert("has arrastrat el dit");
-	 });
-	  
-	  
-	$('#connectButton').click(function() {
-		app.connect()
-	})
-
-	$('#disconnectButton').click(function() {
-		app.disconnect()
-	})
-
-	$('#led').click(function(){
-		app.ledOn()
-	})	  
-      
-});
-
-var app = {}
-
-app.PORT = 1337
-app.socketId
-
-app.connect = function() {
-
-	var IPAddress = $('#IPAddress').val()
-
-	console.log('Estem intentant la connexió a ' + IPAddress + ' en el port ' + app.PORT )
-
-	$('#startView').hide()
-	$('#connectingStatus').text('Connectant a ' + IPAddress)
-	$('#connectingView').show()
-
-	chrome.sockets.tcp.create(function(createInfo) {
-
-		app.socketId = createInfo.socketId
-
-		chrome.sockets.tcp.connect(
-			app.socketId,
-			IPAddress,
-			app.PORT,
-			connectedCallback)
-	})
-
-	function connectedCallback(result) {
+});	
 	
-		if (result === 0) {
 
-			 console.log('Connectat a ' + IPAddress)
-			 var info = "Connectat a " + IPAddress + " al sockedID : " + app.socketId 
-			 //navigator.notification.alert(info, function() {})
-			 			
-			 $('#connectingView').hide()
-			 $('#controlView').show()
-			
-		}
-		else {
 
-			var errorMessage = 'Ha fallat la connexió a ' + app.IPAdress + ' en el port ' + app.PORT
-			console.log(errorMessage)
-			//navigator.notification.alert(errorMessage, function() {})
-			$('#connectingView').hide()
-			$('#startView').show()
-		}
-	}
-}
-
-app.sendString = function(sendString) {
-
-	console.log('Intentant enviar :' + sendString)	
-
-	chrome.sockets.tcp.send (
-		app.socketId,
-		app.stringToBuffer(sendString),
-		function(sendInfo) {
-
-			if (sendInfo.resultCode < 0) {
-
-				var errorMessage = 'Ha fallat l´enviament de dades'
-
-				console.log(errorMessage)
-				//navigator.notification.alert(errorMessage, function() {})
-			}
-			else
-			{
-				var info = 'Enviat el valor : ' + sendInfo + ' i obtingut el resultat : ' + sendInfo.resultCode 
-				//navigator.notification.alert(info, function() {})
-			}
-		}
-			
-	)
-}
-
-app.ledOn = function() {
-
-	app.sendString('H')
-
-	$('#led').removeClass('ledOff').addClass('ledOn')
-
-	$('#led').unbind('click').click(function(){
-		app.ledOff()
-	})	
+function draw(amplada_pantalla_CSS,alcada_pantalla_CSS,posicio_x_bola,posicio_y_bola,mida_x_bola,mida_y_bola,nivell) {
 	
-	app.disconnect()
-	$('#connectingView').hide()
-	$('#startView').show()
+		alert("cridada la funció DRAW");
 	
+		var canvas = document.getElementById('canvas');
+		var ctx = canvas.getContext('2d');
+		
+		// dibuixo el fons
+		var img_fons = new Image();   
+		
+		img_fons.src = 'img/black.jpg';
+		
+		
+		ctx.drawImage(img_fons,0,0,amplada_pantalla_CSS,alcada_pantalla_CSS);
+		
+		// LA BOLA - ESFERA - NAU .... 
+		var radi_bola = mida_x_bola / 2 ;
+		posicio_x_bola = posicio_x_bola - radi_bola ; // FEM QUE EL CENTRE SIGUI EL PUNT TOCAT 
+		posicio_y_bola = posicio_y_bola - radi_bola ; 
+		
+		
+		// dibuixo la bola
+		var img = new Image(); 
+		img.src = 'img/esfera.png';
+		ctx.drawImage(img,posicio_x_bola,posicio_y_bola,mida_x_bola,mida_y_bola);
+		
+		
+		
 }
-
-app.ledOff = function() {
-
-	app.sendString('L')
-
-	$('#led').removeClass('ledOn').addClass('ledOff')
-
-	$('#led').unbind('click').click(function(){
-		app.ledOn()
-	})
-	
-	app.disconnect()
-	$('#connectingView').hide()
-	$('#startView').show()
-}
-
-app.disconnect = function() {
-
-	chrome.sockets.tcp.close(app.socketId, function() {
-		console.log('Finalitzat el tancament del Socket TCP.')
-		//navigator.notification.alert('Finalitzat el tancament del Socket TCP.', function() {})
-	})
-
-	$('#controlView').hide()
-	$('#startView').show()
-}
-
-// Helper functions. 
-
-app.stringToBuffer = function(string) {
-
-	var buffer = new ArrayBuffer(string.length)
-	var bufferView = new Uint8Array(buffer)
-	
-	for (var i = 0; i < string.length; ++i) {
-
-		bufferView[i] = string.charCodeAt(i)
-	}
-
-	return buffer
-}
-
-app.bufferToString = function(buffer) {
-
-	return String.fromCharCode.apply(null, new Uint8Array(buffer))
-}
-
-
