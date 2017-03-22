@@ -32,6 +32,14 @@ $(document).on('deviceready', function() {
 		//alert("has girat el dispositiu");
 	}, false); 
 	
+	document.addEventListener('touchstart', function(e) {
+	     alert("Clicat") ;
+	});	
+	
+	document.addEventListener('touchmove', function(e) {
+	      alert("has arrastrat el dit");
+	 });
+	
 	var nivell = 1 ;
 	draw(amplada_pantalla_CSS,alcada_pantalla_CSS,posicio_x_bola,posicio_y_bola,mida_x_bola,mida_y_bola,nivell)	 ;
 	
@@ -46,24 +54,10 @@ function draw(amplada_pantalla_CSS,alcada_pantalla_CSS,posicio_x_bola,posicio_y_
 		var canvas = document.getElementById('canvas');
 		var ctx = canvas.getContext('2d');
 		
-		// dibuixo el fons
-		var img_fons = new Image();   
-		
-		img_fons.src = 'img/black.jpg';
-		
-		
-		ctx.drawImage(img_fons,0,0,amplada_pantalla_CSS,alcada_pantalla_CSS);
-		
-		// LA BOLA - ESFERA - NAU .... 
-		var radi_bola = mida_x_bola / 2 ;
-		posicio_x_bola = posicio_x_bola - radi_bola ; // FEM QUE EL CENTRE SIGUI EL PUNT TOCAT 
-		posicio_y_bola = posicio_y_bola - radi_bola ; 
-		
-		
-		// dibuixo la bola
-		var img = new Image(); 
-		img.src = 'img/esfera.png';
-		ctx.drawImage(img,posicio_x_bola,posicio_y_bola,mida_x_bola,mida_y_bola);
+		 // Formas rectangulares
+          	ctx.fillRect(25,25,100,100);
+          	ctx.clearRect(45,45,60,60);
+	        ctx.strokeRect(50,50,50,50);
 		
 		
 		
