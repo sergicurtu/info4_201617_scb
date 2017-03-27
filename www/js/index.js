@@ -33,7 +33,14 @@ $(document).on('deviceready', function() {
 	}, false); 
 	
 	document.addEventListener('touchstart', function(e) {
-	     // alert("Clicat") ;
+	     	
+		var touchobj = e.changedTouches[0] ; // referència al primer punt tocat (pex: el primner dit)
+		startx = parseInt(touchobj.clientX) ; // quina és la posició x en referència al costat esquerra de la pantalla
+		starty = parseInt(touchobj.clientY) ;
+		
+		e.preventDefault() ;
+		alert("Touch_x : " + startx + " --- Touch_y : " + starty);
+		
 	});	
 	
 	document.addEventListener('touchmove', function(e) {
@@ -43,7 +50,7 @@ $(document).on('deviceready', function() {
 		starty = parseInt(touchobj.clientY) ;
 		
 		e.preventDefault() ;
-		alert("Touch_x : " + startx + " --- Touch_y : " + starty);
+		//alert("Touch_x : " + startx + " --- Touch_y : " + starty);
 		
 	 });
 	
