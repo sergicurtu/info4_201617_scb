@@ -22,8 +22,8 @@ $(document).on('deviceready', function() {
 	var mida_y_bola = mida_x_bola ;  // 36 ;
 	var posicio_x_bola = centre_x - ( mida_x_bola / 2 ) ;
 	var posicio_y_bola = centre_y - ( mida_y_bola / 2 ) ;
- 	
- 	
+		  
+				  
 	document.addEventListener("offline", function() { 
 		// alert("ara NO HI HA internet");
 	}, false);
@@ -37,17 +37,22 @@ $(document).on('deviceready', function() {
 	});	
 	
 	document.addEventListener('touchmove', function(e) {
-	      alert("has arrastrat el dit");
+	      	
+		var touchobj = e.changedTouches[0] ; // referència al primer punt tocat (pex: el primner dit)
+		startx = parseInt(touchobj.clientX) ; // quina és la posició x en referència al costat esquerra de la pantalla
+		starty = parseInt(touchobj.clientY) ;
+		
+		alert("Touch_x" + startx + "Touch_y" + starty);
+		
 	 });
 	
-	var nivell = 1 ;
-	draw(amplada_pantalla_CSS,alcada_pantalla_CSS,posicio_x_bola,posicio_y_bola,mida_x_bola,mida_y_bola,nivell)	 ;
+	draw()	 ;
 	
 });	
 	
 
 
-function draw(amplada_pantalla_CSS,alcada_pantalla_CSS,posicio_x_bola,posicio_y_bola,mida_x_bola,mida_y_bola,nivell) {
+function draw() {
 	
 		alert("cridada la funció DRAW");
 	
