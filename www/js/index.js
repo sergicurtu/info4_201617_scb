@@ -33,7 +33,7 @@ $(document).on('deviceready', function() {
 	}, false); 
 	
 	document.addEventListener('touchstart', function(e) {
-	     alert("Clicat") ;
+	     // alert("Clicat") ;
 	});	
 	
 	document.addEventListener('touchmove', function(e) {
@@ -42,7 +42,8 @@ $(document).on('deviceready', function() {
 		startx = parseInt(touchobj.clientX) ; // quina és la posició x en referència al costat esquerra de la pantalla
 		starty = parseInt(touchobj.clientY) ;
 		
-		alert("Touch_x" + startx + "Touch_y" + starty);
+		e.preventDefault() ;
+		alert("Touch_x : " + startx + " --- Touch_y : " + starty);
 		
 	 });
 	
