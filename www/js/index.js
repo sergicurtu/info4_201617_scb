@@ -39,7 +39,9 @@ $(document).on('deviceready', function() {
 		starty = parseInt(touchobj.clientY) ;
 		
 		e.preventDefault() ;
-		alert("Touch_x : " + startx + " --- Touch_y : " + starty);
+		//alert("Touch_x : " + startx + " --- Touch_y : " + starty);
+		
+		draw(startx,starty)	;
 		
 	});	
 	
@@ -54,23 +56,22 @@ $(document).on('deviceready', function() {
 		
 	 });
 	
-	draw()	 ;
+	
 	
 });	
 	
 
 
-function draw() {
+function draw(startx,starty) {
 	
-		alert("cridada la funció DRAW");
+		// alert("cridada la funció DRAW");
 	
 		var canvas = document.getElementById('canvas');
 		var ctx = canvas.getContext('2d');
 		
 		 // Formas rectangulares
-          	ctx.fillRect(25,25,100,100);
-          	ctx.clearRect(45,45,60,60);
-	        ctx.strokeRect(50,50,50,50);
+          	ctx.fillRect(startx,starty,100,100);
+          
 		
 		
 		
