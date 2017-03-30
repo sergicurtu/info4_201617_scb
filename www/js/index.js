@@ -35,21 +35,21 @@ $(document).on('deviceready', function() {
 	document.addEventListener('touchstart', function(e) {
 	     	
 		var touchobj = e.changedTouches[0] ; // referència al primer punt tocat (pex: el primner dit)
-		startx = parseInt(touchobj.clientX) ; // quina és la posició x en referència al costat esquerra de la pantalla
-		starty = parseInt(touchobj.clientY) ;
+		var startx = parseInt(touchobj.clientX) ; // quina és la posició x en referència al costat esquerra de la pantalla
+		var starty = parseInt(touchobj.clientY) ;
 		
 		e.preventDefault() ;
 		//alert("Touch_x : " + startx + " --- Touch_y : " + starty);
 		
-		draw(startx,starty)	;
+		draw(startx,starty,amplada_pantalla_CSS,alcada_pantalla_CSS)	;
 		
 	});	
 	
 	document.addEventListener('touchmove', function(e) {
 	      	
 		var touchobj = e.changedTouches[0] ; // referència al primer punt tocat (pex: el primner dit)
-		startx = parseInt(touchobj.clientX) ; // quina és la posició x en referència al costat esquerra de la pantalla
-		starty = parseInt(touchobj.clientY) ;
+		var startx = parseInt(touchobj.clientX) ; // quina és la posició x en referència al costat esquerra de la pantalla
+		var starty = parseInt(touchobj.clientY) ;
 		
 		e.preventDefault() ;
 		//alert("Touch_x : " + startx + " --- Touch_y : " + starty);
@@ -62,7 +62,7 @@ $(document).on('deviceready', function() {
 	
 
 
-function draw(startx,starty) {
+function draw(startx,starty,amplada_pantalla_CSS,alcada_pantalla_CSS) {
 	
 		// alert("cridada la funció DRAW");
 		
@@ -71,6 +71,10 @@ function draw(startx,starty) {
 		
 		// en primier lloc he de netejar el canvas
 		canvas.width=canvas.width;
+		canvas.style.backgroundColor = '#000000' ;
+	
+		// linia 1/2 camp
+		ctx.fillRect((amplada_pantalla_CSS/2)-1,0,3,alcada_pantalla_CSS);
 	
 		 // Formas rectangulares
           	ctx.fillRect(startx,starty,100,100);
