@@ -9,14 +9,14 @@ $(document).on('deviceready', function() {
      var alcada_pantalla = screen.width ;		// 720px  --> SG_Note2
      var amplada_pantalla = screen.height ; 		// 1280px
      var alcada_pantalla_CSS = window.innerWidth ; 	// 360px
-     var amplada_pantalla_CSS = window.innerHeight ;	// 616px 
+     var amplada_pantalla_CSS = (window.innerHeight) + 24;	// 616px -> 640
      /////////////////////////////////////////////////////////
      
      // REDIMENSIONEM EL CANVAS
      var canvas = document.getElementById('canvas');
      var ctx = canvas.getContext('2d');
-     ctx.canvas.width  = window.innerWidth;
-     ctx.canvas.height = window.innerHeight;
+     ctx.canvas.width  =amplada_pantalla_CSS  ;
+     ctx.canvas.height = alcada_pantalla_CSS  ;
      
 	// centre pantalla ?
 	var centre_x = amplada_pantalla_CSS / 2 ;
