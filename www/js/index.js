@@ -40,7 +40,7 @@ $(document).on('deviceready', function() {
 	
 	
 	// Quina posició la bola ? Temin present que la bola ocupa un espai 	// quina mida la bola ?
-	var mida_x_bola = amplada_pantalla_CSS * ( 10 / 100 ) ; 
+	var mida_x_bola = amplada_pantalla_CSS * ( 5/ 100 ) ; 
 	var mida_y_bola = mida_x_bola ;  // 36 ;
 	var posicio_x_bola = centre_x - ( mida_x_bola / 2 ) ;
 	var posicio_y_bola = centre_y - ( mida_y_bola / 2 ) ;
@@ -99,11 +99,11 @@ function draw(startx,starty,amplada_pantalla_CSS,alcada_pantalla_CSS,centre_x,ce
 		ctx.fillStyle="#FFFFFF";
 		ctx.fillRect(0,(amplada_pantalla_CSS/2)-1,alcada_pantalla_CSS,3);
 	
-		 // Dibuixar PILOTA
-		ctx.fillStyle="#FFFFFF";
-          	ctx.fillRect(startx,starty,20,20);
+		// Dibuixar PILOTA
+		// ctx.fillStyle="#FFFFFF";
+          	// ctx.fillRect(startx,starty,20,20);
 		ctx.beginPath();
-	      	ctx.arc(centre_x, centre_y, mida_x_bola, 0, 2 * Math.PI, false);
+	      	ctx.arc(startx, starty, mida_x_bola, 0, 2 * Math.PI, false);
 	      	ctx.fillStyle = 'white';
 	      	ctx.fill();
 	      	ctx.lineWidth = 2;
