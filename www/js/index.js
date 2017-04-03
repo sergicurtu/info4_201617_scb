@@ -18,11 +18,12 @@ $(document).on('deviceready', function() {
 	var centre_y = alcada_pantalla_CSS / 2 ;  // var centre_y = window.innerHeight / 2 ; //
 		
 	// Quina posició la bola ? Temin present que la bola ocupa un espai 	// quina mida la bola ?
+	/*
 	var mida_x_bola = amplada_pantalla_CSS * ( 10 / 100 ) ; 
 	var mida_y_bola = mida_x_bola ;  // 36 ;
 	var posicio_x_bola = centre_x - ( mida_x_bola / 2 ) ;
 	var posicio_y_bola = centre_y - ( mida_y_bola / 2 ) ;
-		  
+	*/	  
 				  
 	document.addEventListener("offline", function() { 
 		// alert("ara NO HI HA internet");
@@ -41,7 +42,7 @@ $(document).on('deviceready', function() {
 		e.preventDefault() ;
 		//alert("Touch_x : " + startx + " --- Touch_y : " + starty);
 		
-		draw(startx,starty,amplada_pantalla_CSS,alcada_pantalla_CSS)	;
+		draw(startx,starty,amplada_pantalla_CSS,alcada_pantalla_CSS,centre_x,centre_y)	;
 		
 	});	
 	
@@ -62,7 +63,7 @@ $(document).on('deviceready', function() {
 	
 
 
-function draw(startx,starty,amplada_pantalla_CSS,alcada_pantalla_CSS) {
+function draw(startx,starty,amplada_pantalla_CSS,alcada_pantalla_CSS,centre_x,centre_y) {
 	
 		// alert("cridada la funció DRAW");
 		
@@ -74,9 +75,11 @@ function draw(startx,starty,amplada_pantalla_CSS,alcada_pantalla_CSS) {
 		canvas.style.backgroundColor = '#000000' ;
 	
 		// linia 1/2 camp
+		ctx.fillStyle="#FFFFFF";
 		ctx.fillRect((amplada_pantalla_CSS/2)-1,0,3,alcada_pantalla_CSS);
 	
 		 // Formas rectangulares
+		ctx.fillStyle="#FFFFFF";
           	ctx.fillRect(startx,starty,100,100);
           
 		
