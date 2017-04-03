@@ -40,11 +40,12 @@ $(document).on('deviceready', function() {
 	
 	
 	// Quina posició la bola ? Temin present que la bola ocupa un espai 	// quina mida la bola ?
-	var mida_x_bola = amplada_pantalla_CSS * ( 5/ 100 ) ; 
+	var mida_x_bola = amplada_pantalla_CSS * ( 2/100 ) ; 
 	var mida_y_bola = mida_x_bola ;  // 36 ;
 	var posicio_x_bola = centre_x - ( mida_x_bola / 2 ) ;
 	var posicio_y_bola = centre_y - ( mida_y_bola / 2 ) ;
 	
+	var estat_joc = 0 ;
 				  
 	document.addEventListener("offline", function() { 
 		// alert("ara NO HI HA internet");
@@ -63,7 +64,15 @@ $(document).on('deviceready', function() {
 		e.preventDefault() ;
 		//alert("Touch_x : " + startx + " --- Touch_y : " + starty);
 		
-		draw(startx,starty,amplada_pantalla_CSS,alcada_pantalla_CSS,centre_x,centre_y,mida_x_bola,mida_y_bola,posicio_x_bola,posicio_y_bola)	;
+		draw(estat_joc,startx,starty,amplada_pantalla_CSS,alcada_pantalla_CSS,centre_x,centre_y,mida_x_bola,mida_y_bola,posicio_x_bola,posicio_y_bola)	;
+		
+		/*
+		   el estat del joc ens indica com hem de dibuixar les coses
+		   estat = 0 vol dir que acabem de carregar 
+		   estat = 1 vol dir que la bola s'hauria de moure sola
+		*/   
+		if ( estat_joc == 0 ) { estat_joc = 1 ; }
+		
 		
 	});	
 	
@@ -84,7 +93,7 @@ $(document).on('deviceready', function() {
 	
 
 
-function draw(startx,starty,amplada_pantalla_CSS,alcada_pantalla_CSS,centre_x,centre_y,mida_x_bola,mida_y_bola,posicio_x_bola,posicio_y_bola) {
+function draw(estat_joc,startx,starty,amplada_pantalla_CSS,alcada_pantalla_CSS,centre_x,centre_y,mida_x_bola,mida_y_bola,posicio_x_bola,posicio_y_bola) {
 	
 		// alert("cridada la funció DRAW");
 		
@@ -102,13 +111,30 @@ function draw(startx,starty,amplada_pantalla_CSS,alcada_pantalla_CSS,centre_x,ce
 		// Dibuixar PILOTA
 		// ctx.fillStyle="#FFFFFF";
           	// ctx.fillRect(startx,starty,20,20);
-		ctx.beginPath();
-	      	ctx.arc(startx, starty, mida_x_bola, 0, 2 * Math.PI, false);
-	      	ctx.fillStyle = 'white';
-	      	ctx.fill();
-	      	ctx.lineWidth = 2;
-	      	ctx.strokeStyle = 'yellow';
-	      	ctx.stroke();
+		
+		if (estat_joc == 0) 
+		{
+			ctx.beginPath();
+			ctx.arc(posicio_x_bola, posicio_y_bola, mida_x_bola, 0, 2 * Math.PI, false);
+			ctx.fillStyle = 'white';
+			ctx.fill();
+			ctx.lineWidth = 2;
+			ctx.strokeStyle = 'yellow';
+			ctx.stroke();
+		}
+	
+		if (estat_joc == 1) 
+		{
+			ctx.beginPath();
+			ctx.arc(startx, starty, mida_x_bola, 0, 2 * Math.PI, false);
+			ctx.fillStyle = 'white';
+			ctx.fill();
+			ctx.lineWidth = 2;
+			ctx.strokeStyle = 'yellow';
+			ctx.stroke();
+		}
+	
+	
 
 		
 		
