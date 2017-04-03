@@ -11,12 +11,11 @@ $(document).on('deviceready', function() {
      var alcada_pantalla = screen.width ;		// 720px  --> SG_Note2
      var amplada_pantalla = screen.height ; 		// 1280px
      var alcada_pantalla_CSS = window.innerWidth ; 	// 360px
-     var amplada_pantalla_CSS = (window.innerHeight) + 24;	// 616px -> 640
+     var amplada_pantalla_CSS = (window.innerHeight) ;	// 640px 
 	
-	alert("alçada : "+alcada_pantalla_CSS);
-	alert("amplada : "+amplada_pantalla_CSS);
-	
-	
+	alert("alçada : "+alcada_pantalla_CSS);   // -> 360
+	alert("amplada : "+amplada_pantalla_CSS); // -> 640
+		
      /////////////////////////////////////////////////////////
      
      // REDIMENSIONEM EL CANVAS
@@ -41,12 +40,11 @@ $(document).on('deviceready', function() {
 	
 	
 	// Quina posició la bola ? Temin present que la bola ocupa un espai 	// quina mida la bola ?
-	/*
 	var mida_x_bola = amplada_pantalla_CSS * ( 10 / 100 ) ; 
 	var mida_y_bola = mida_x_bola ;  // 36 ;
 	var posicio_x_bola = centre_x - ( mida_x_bola / 2 ) ;
 	var posicio_y_bola = centre_y - ( mida_y_bola / 2 ) ;
-	*/	  
+	
 				  
 	document.addEventListener("offline", function() { 
 		// alert("ara NO HI HA internet");
@@ -65,7 +63,7 @@ $(document).on('deviceready', function() {
 		e.preventDefault() ;
 		//alert("Touch_x : " + startx + " --- Touch_y : " + starty);
 		
-		draw(startx,starty,amplada_pantalla_CSS,alcada_pantalla_CSS,centre_x,centre_y)	;
+		draw(startx,starty,amplada_pantalla_CSS,alcada_pantalla_CSS,centre_x,centre_y,mida_x_bola,mida_y_bola,posicio_x_bola,posicio_y_bola)	;
 		
 	});	
 	
@@ -86,7 +84,7 @@ $(document).on('deviceready', function() {
 	
 
 
-function draw(startx,starty,amplada_pantalla_CSS,alcada_pantalla_CSS,centre_x,centre_y) {
+function draw(startx,starty,amplada_pantalla_CSS,alcada_pantalla_CSS,centre_x,centre_y,mida_x_bola,mida_y_bola,posicio_x_bola,posicio_y_bola) {
 	
 		// alert("cridada la funció DRAW");
 		
@@ -101,10 +99,17 @@ function draw(startx,starty,amplada_pantalla_CSS,alcada_pantalla_CSS,centre_x,ce
 		ctx.fillStyle="#FFFFFF";
 		ctx.fillRect(0,(amplada_pantalla_CSS/2)-1,alcada_pantalla_CSS,3);
 	
-		 // Formas rectangulares
+		 // Dibuixar PILOTA
 		ctx.fillStyle="#FFFFFF";
           	ctx.fillRect(startx,starty,20,20);
-          
+		ctx.beginPath();
+	      	ctx.arc(centre_x, centre_y, mida_x_bola, 0, 2 * Math.PI, false);
+	      	ctx.fillStyle = 'white';
+	      	ctx.fill();
+	      	ctx.lineWidth = 2;
+	      	ctx.strokeStyle = 'yellow';
+	      	ctx.stroke();
+
 		
 		
 		
