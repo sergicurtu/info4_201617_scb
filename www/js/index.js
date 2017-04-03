@@ -80,7 +80,7 @@ function draw(startx,starty,amplada_pantalla_CSS,alcada_pantalla_CSS,centre_x,ce
 	
 		 // Formas rectangulares
 		ctx.fillStyle="#FFFFFF";
-          	ctx.fillRect(startx,starty,100,100);
+          	ctx.fillRect(startx,starty,20,20);
           
 		
 		
