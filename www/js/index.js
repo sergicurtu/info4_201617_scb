@@ -92,7 +92,7 @@ function draw(startx,starty,amplada_pantalla_CSS,alcada_pantalla_CSS,centre_x,ce
 	
 		// linia 1/2 camp
 		ctx.fillStyle="#FFFFFF";
-		ctx.fillRect((amplada_pantalla_CSS/2)-1,0,3,alcada_pantalla_CSS);
+		ctx.fillRect(0,(amplada_pantalla_CSS/2)-1,alcada_pantalla_CSS,3);
 	
 		 // Formas rectangulares
 		ctx.fillStyle="#FFFFFF";
