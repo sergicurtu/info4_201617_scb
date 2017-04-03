@@ -1,10 +1,15 @@
 $(document).on('deviceready', function() {
 
      // determinem amplada alçada DISPOSITIU ------------------
-     var amplada_pantalla = screen.width ;		// 720px  --> SG_Note2
-     var alcada_pantalla = screen.height ; 		// 1280px
-     var amplada_pantalla_CSS = window.innerWidth ; 	// 360px
-     var alcada_pantalla_CSS = window.innerHeight ;	// 616px 
+ 
+     /*		
+	en aquest cas faig alçada = width i amplada = height per treballar en horitzontal
+	potser millor definir en landscape el dispositiu (?)
+     */
+     var alcada_pantalla = screen.width ;		// 720px  --> SG_Note2
+     var amplada_pantalla = screen.height ; 		// 1280px
+     var alcada_pantalla_CSS = window.innerWidth ; 	// 360px
+     var amplada_pantalla_CSS = window.innerHeight ;	// 616px 
      /////////////////////////////////////////////////////////
      
      // REDIMENSIONEM EL CANVAS
@@ -16,7 +21,18 @@ $(document).on('deviceready', function() {
 	// centre pantalla ?
 	var centre_x = amplada_pantalla_CSS / 2 ;
 	var centre_y = alcada_pantalla_CSS / 2 ;  // var centre_y = window.innerHeight / 2 ; //
-		
+	
+	ctx.font="30px Verdana";
+	// Create gradient
+	var gradient=ctx.createLinearGradient(0,0,canvas.width,0);
+	gradient.addColorStop("0","magenta");
+	gradient.addColorStop("0.5","blue");
+	gradient.addColorStop("1.0","red");
+	// Fill with gradient
+	ctx.fillStyle=gradient;
+	ctx.fillText("Toca la pantalla per començar",10,90);
+	
+	
 	// Quina posició la bola ? Temin present que la bola ocupa un espai 	// quina mida la bola ?
 	/*
 	var mida_x_bola = amplada_pantalla_CSS * ( 10 / 100 ) ; 
