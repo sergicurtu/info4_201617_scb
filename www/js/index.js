@@ -8,15 +8,15 @@ $(document).on('deviceready', function() {
      */
      screen.orientation.lock('landscape');			
 	
-     var alcada_pantalla = screen.width ;		// 720px  --> SG_Note2 // mate 9 -> 1920
-     var amplada_pantalla = screen.height ; 		// 1280px // 1080
-     var alcada_pantalla_CSS = window.innerWidth ; 	// 360px  // 604
-     var amplada_pantalla_CSS = (window.innerHeight) ;	// 640px  // 336
+     var alcada_pantalla = screen.width ;		// 720px  --> SG_Note2 // mate 9 -> 1080
+     var amplada_pantalla = screen.height ; 		// 1280px // 1920
+     var alcada_pantalla_CSS = window.innerWidth ; 	// 360px  // 360
+     var amplada_pantalla_CSS = (window.innerHeight) ;	// 640px  // 640
 	
-	alert("alçada física : " + alcada_pantalla);   // -> 
-	alert("amplada física : " + amplada_pantalla); // -> 
-	alert("alçada : " + alcada_pantalla_CSS);   // -> 360
-	alert("amplada : " + amplada_pantalla_CSS); // -> 640
+	//alert("alçada física : " + alcada_pantalla);   // -> 
+	//alert("amplada física : " + amplada_pantalla); // -> 
+	//alert("alçada : " + alcada_pantalla_CSS);   // -> 360
+	//alert("amplada : " + amplada_pantalla_CSS); // -> 640
 		
      /////////////////////////////////////////////////////////
      
@@ -31,13 +31,24 @@ $(document).on('deviceready', function() {
 	var centre_y = alcada_pantalla_CSS / 2 ;  // var centre_y = window.innerHeight / 2 ; //
 	
 	ctx.font="30px Verdana";
+	
 	// Create gradient
 	var gradient=ctx.createLinearGradient(0,0,canvas.width,0);
 	gradient.addColorStop("0","magenta");
 	gradient.addColorStop("0.5","blue");
 	gradient.addColorStop("1.0","red");
+	
 	// Fill with gradient
 	ctx.fillStyle=gradient;
+	
+	 // http://stackoverflow.com/questions/3167928/drawing-rotated-text-on-a-html5-canvas //
+	 ctx.save();
+	 ctx.translate(10, 10);
+	 ctx.rotate(-Math.PI/2);
+	 ctx.textAlign = "center";
+	 ctx.fillText("Toca la pantalla per començar", 10, 90);
+	 ctx.restore();
+	
 	ctx.fillText("Toca la pantalla per començar",10,90);
 	
 	
