@@ -31,8 +31,8 @@
 	<!-- 6.3.0. -> 6.5.0 16.04.2017 -->
    	<preference name="phonegap-version" value="cli-6.5.0" />
    	
-   	<!-- Per evitar gir de pantalla portait -> landscape 16.04.2017 -->
-	<preference name="orientation"      value="landscape" />
+   	<!-- Per evitar gir de pantalla portait -> landscape 16.04.2017 ? -->
+	<preference name="orientation"      value="portrait" />
 	
 	<preference name="android-minSdkVersion" value="14" /> <!-- 16.10.2016  android: MIN SDK version supported on the target device. MAX version is blank by default. -->
 	<preference name="target-device"    value="universal" />
