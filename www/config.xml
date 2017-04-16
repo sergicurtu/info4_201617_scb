@@ -3,8 +3,8 @@
 <widget xmlns   = "http://www.w3.org/ns/widgets"
         xmlns:gap   = "http://phonegap.com/ns/1.0"
         id          = "cat.numancia.pong_sergi_curtu"
-        versionCode = "22" 
-        version     = "0.2.02" >
+        versionCode = "25" 
+        version     = "0.2.05" >
 	
 	<!-- versionCode is optional and Android only -->
 
@@ -31,7 +31,7 @@
 	<!-- 6.3.0. -> 6.5.0 16.04.2017 -->
    	<preference name="phonegap-version" value="cli-6.5.0" />
    	
-   	<!-- Per evitar gir de pantalla portait -> landscape 16.04.2017 ? -->
+   	<!-- Per evitar gir de pantalla portait -> landscape 16.04.2017 ? no , millor així -->
 	<preference name="orientation"      value="portrait" />
 	
 	<preference name="android-minSdkVersion" value="14" /> <!-- 16.10.2016  android: MIN SDK version supported on the target device. MAX version is blank by default. -->
