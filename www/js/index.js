@@ -47,9 +47,7 @@ $(document).on('deviceready', function() {
 	 ctx.translate(centre_x,centre_y); // el centre de gir és la meitat de la pantalla
 	 ctx.rotate(Math.PI/2);  //  Math.PI == 180º => -(3/2) * 180 = -270  - que seria el mateix que +90 -> 180 / 2 ) 
 	 ctx.textAlign = "center";
-	 ctx.fillText("Toca la pantalla per començar", 10, 60);
-	 ctx.fillText("Toca la pantalla per començar", 30, 90);
-	 ctx.fillText("Toca la pantalla per començar", 50, 120);
+	 ctx.fillText("Toca la pantalla per començar", 100, 120);
 	 ctx.restore();
 	
 	// ctx.fillText("Toca la pantalla per començar",10,90);
