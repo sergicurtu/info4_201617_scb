@@ -6,12 +6,12 @@ $(document).on('deviceready', function() {
 	en aquest cas faig alçada = width i amplada = height per treballar en horitzontal
 	potser millor definir en landscape el dispositiu (?)
      */
-     screen.orientation.lock('landscape');			
+     // screen.orientation.lock('landscape');			
 	
-     var alcada_pantalla = screen.width ;		// 720px  --> SG_Note2
-     var amplada_pantalla = screen.height ; 		// 1280px
-     var alcada_pantalla_CSS = window.innerWidth ; 	// 360px
-     var amplada_pantalla_CSS = (window.innerHeight) ;	// 640px 
+     var alcada_pantalla = screen.width ;		// 720px  --> SG_Note2 // mate 9 -> 1920
+     var amplada_pantalla = screen.height ; 		// 1280px // 1080
+     var alcada_pantalla_CSS = window.innerWidth ; 	// 360px  // 604
+     var amplada_pantalla_CSS = (window.innerHeight) ;	// 640px  // 336
 	
 	alert("alçada física : " + alcada_pantalla);   // -> 
 	alert("amplada física : " + amplada_pantalla); // -> 
