@@ -13,8 +13,10 @@ $(document).on('deviceready', function() {
      var alcada_pantalla_CSS = window.innerWidth ; 	// 360px
      var amplada_pantalla_CSS = (window.innerHeight) ;	// 640px 
 	
-	alert("alçada : "+alcada_pantalla_CSS);   // -> 360
-	alert("amplada : "+amplada_pantalla_CSS); // -> 640
+	alert("alçada física : " + alcada_pantalla);   // -> 
+	alert("amplada física : " + amplada_pantalla); // -> 
+	alert("alçada : " + alcada_pantalla_CSS);   // -> 360
+	alert("amplada : " + amplada_pantalla_CSS); // -> 640
 		
      /////////////////////////////////////////////////////////
      
