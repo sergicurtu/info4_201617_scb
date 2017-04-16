@@ -42,9 +42,10 @@ $(document).on('deviceready', function() {
 	ctx.fillStyle=gradient;
 	
 	 // http://stackoverflow.com/questions/3167928/drawing-rotated-text-on-a-html5-canvas //
+	 // http://www.w3resource.com/html5-canvas/html5-canvas-translation-rotation-scaling.php // 
 	 ctx.save();
 	 ctx.translate(centre_x,centre_y); // el centre de gir és la meitat de la pantalla
-	 ctx.rotate(-(3/2)*Math.PI);  //  Math.PI == 180º => 3/2 * 180 = -270  - que seria el mateix que +90 -> 180 / 2 ) 
+	 ctx.rotate(Math.PI/2);  //  Math.PI == 180º => -(3/2) * 180 = -270  - que seria el mateix que +90 -> 180 / 2 ) 
 	 ctx.textAlign = "center";
 	 ctx.fillText("Toca la pantalla per començar", 30, 90);
 	 ctx.restore();
