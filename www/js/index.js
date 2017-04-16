@@ -43,13 +43,13 @@ $(document).on('deviceready', function() {
 	
 	 // http://stackoverflow.com/questions/3167928/drawing-rotated-text-on-a-html5-canvas //
 	 ctx.save();
-	 ctx.translate(10, 10);
-	 ctx.rotate(-Math.PI/2);
+	 ctx.translate(0, 0);
+	 ctx.rotate(Math.PI/2);
 	 ctx.textAlign = "center";
 	 ctx.fillText("Toca la pantalla per començar", 10, 90);
 	 ctx.restore();
 	
-	ctx.fillText("Toca la pantalla per començar",10,90);
+	// ctx.fillText("Toca la pantalla per començar",10,90);
 	
 	
 	// Quina posició la bola ? Temin present que la bola ocupa un espai 	// quina mida la bola ?
