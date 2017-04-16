@@ -44,7 +44,7 @@ $(document).on('deviceready', function() {
 	 // http://stackoverflow.com/questions/3167928/drawing-rotated-text-on-a-html5-canvas //
 	 ctx.save();
 	 ctx.translate(0, 0);
-	 ctx.rotate(-Math.PI/2);  //  Math.PI == 180º
+	 ctx.rotate(-2*Math.PI);  //  Math.PI == 180º
 	 ctx.textAlign = "center";
 	 ctx.fillText("Toca la pantalla per començar", 10, 90);
 	 ctx.restore();
