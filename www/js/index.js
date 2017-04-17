@@ -169,16 +169,6 @@ function draw() {
 			ctx.fillStyle="#FFFFFF";
 			ctx.fillRect(0,(amplada_pantalla_CSS/2)-1,alcada_pantalla_CSS,3);
 	
-			// testejar coordenadors pantalla //
-			alert("1");	dibuixar_bola(ctx,0, 0, mida_x_bola);
-			alert("2");	dibuixar_bola(ctx,320, 0, mida_x_bola);
-			alert("3");	dibuixar_bola(ctx,640, 0, mida_x_bola);
-			alert("4");	dibuixar_bola(ctx,0, 90, mida_x_bola);
-			alert("5");	dibuixar_bola(ctx,0, 180, mida_x_bola);
-			alert("6");	dibuixar_bola(ctx,0, 360, mida_x_bola);
-			alert("7");	dibuixar_bola(ctx,640, 360, mida_x_bola);
-			alert("FINAL DEMO COORDENADES");
-	
 			dibuixar_bola(ctx,posicio_x_bola, posicio_y_bola, mida_x_bola);
 			
 			window.pos_x_bola = window.pos_x_bola + 1 ;
@@ -198,6 +188,16 @@ function draw() {
 			// linia 1/2 camp
 			ctx.fillStyle="#FFFFFF";
 			ctx.fillRect(0,(amplada_pantalla_CSS/2)-1,alcada_pantalla_CSS,3);
+			
+			// testejar coordenadors pantalla //
+			alert("1");	dibuixar_bola(ctx,0, 0, mida_x_bola);
+			alert("2");	dibuixar_bola(ctx,320, 0, mida_x_bola);
+			alert("3");	dibuixar_bola(ctx,640, 0, mida_x_bola);
+			alert("4");	dibuixar_bola(ctx,0, 90, mida_x_bola);
+			alert("5");	dibuixar_bola(ctx,0, 180, mida_x_bola);
+			alert("6");	dibuixar_bola(ctx,0, 360, mida_x_bola);
+			alert("7");	dibuixar_bola(ctx,640, 360, mida_x_bola);
+			alert("FINAL DEMO COORDENADES");
 			
 			dibuixar_bola(ctx,posicio_x_bola, posicio_y_bola, mida_x_bola);
 			
