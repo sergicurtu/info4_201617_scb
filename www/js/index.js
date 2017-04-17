@@ -57,13 +57,12 @@ $(document).on('deviceready', function() {
 	// Quina posició INICIAL de la bola ? Temin present que la bola ocupa un espai 	// quina mida la bola ?
 	var mida_x_bola = amplada_pantalla_CSS * ( 2/100 ) ; 
 	var mida_y_bola = mida_x_bola ;  // 36 ;
-	var posicio_x_bola = centre_x - ( mida_x_bola / 2 ) ;
-	var posicio_y_bola = centre_y - ( mida_y_bola / 2 ) ;
-	
 	window.mida_x_bola = mida_x_bola ;
 	window.mida_y_bola = mida_y_bola ;
-	window.pos_x_bola = posicio_x_bola ;
-	window.pos_y_bola = posicio_y_bola ;
+	
+	// x,y => y,x ja que està girada la pantalla // 
+	window.pos_x_bola = centre_y - ( mida_y_bola / 2 ) ;
+	window.pos_y_bola = centre_x - ( mida_x_bola / 2 ) ; ;
 	
 	var estat_joc = 0 ;
 	window.estat_joc = 0 ;
@@ -139,9 +138,8 @@ function draw() {
 		var mida_x_bola = window.mida_x_bola ;
 		var mida_y_bola = window.mida_y_bola ;
 		
-		// x,y => y,x ja que està girada la pantalla // 
-		var posicio_x_bola = window.pos_y_bola ;
-		var posicio_y_bola = window.pos_x_bola ;
+		var posicio_x_bola = window.pos_x_bola ;
+		var posicio_y_bola = window.pos_y_bola ;
 	
 		
 		
@@ -170,8 +168,8 @@ function draw() {
 			   ctx.stroke();
 			ctx.closePath();
 			
-			window.pos_x_bola = posicio_x_bola + 1 ;
-			window.pos_y_bola = posicio_y_bola - 1 ;
+			window.pos_x_bola = window.pos_x_bola + 1 ;
+			window.pos_y_bola = window.pos_y_bola - 1 ;
 			
 		}
 	
@@ -197,8 +195,8 @@ function draw() {
 			   ctx.stroke();
 			ctx.closePath();
 			
-			window.pos_x_bola = posicio_x_bola + 1 ;
-			window.pos_y_bola = posicio_y_bola - 1 ;
+			window.pos_x_bola = window.pos_x_bola + 1 ;
+			window.pos_y_bola = window.pos_y_bola - 1 ;
 			
 			// LA SEGÜENT POSICIÓ DE LA BOLA TOCARÀ UNA VORA ???  ->  CAL GIRAR //
 			// LA SEGÜENT POSICIÓ DE LA BOLA TOCARÀ UNA RAQUETA ???  ->  CAL GIRAR //
