@@ -177,6 +177,7 @@ function draw() {
 			alert("5");	dibuixar_bola(ctx,0, 180, mida_x_bola);
 			alert("6");	dibuixar_bola(ctx,0, 360, mida_x_bola);
 			alert("7");	dibuixar_bola(ctx,640, 360, mida_x_bola);
+			alert("FINAL DEMO COORDENADES");
 	
 			dibuixar_bola(ctx,posicio_x_bola, posicio_y_bola, mida_x_bola);
 			
