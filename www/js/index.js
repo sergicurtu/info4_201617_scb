@@ -171,9 +171,6 @@ function draw() {
 	
 			dibuixar_bola(ctx,posicio_x_bola, posicio_y_bola, mida_x_bola);
 			
-			window.pos_x_bola = window.pos_x_bola + 1 ;
-			window.pos_y_bola = window.pos_y_bola - 1 ;
-			
 		}
 	
 		if (estat_joc == 1) 
@@ -199,7 +196,7 @@ function draw() {
 			dibuixar_bola(ctx,posicio_x_bola, posicio_y_bola, mida_x_bola);
 			
 			window.pos_x_bola = window.pos_x_bola + 1 ;
-			window.pos_y_bola = window.pos_y_bola - 1 ;
+			window.pos_y_bola = window.pos_y_bola  ;
 			
 			// LA SEGÜENT POSICIÓ DE LA BOLA TOCARÀ UNA VORA ???  ->  CAL GIRAR //
 			// LA SEGÜENT POSICIÓ DE LA BOLA TOCARÀ UNA RAQUETA ???  ->  CAL GIRAR //
