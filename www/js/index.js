@@ -120,6 +120,8 @@ function draw(estat_joc,startx,starty,amplada_pantalla_CSS,alcada_pantalla_CSS,c
 			// aquesta és la primera vegada que redibuixem la pantalla
 			ctx.canvas.width  = window.innerWidth  ;
      			ctx.canvas.height = window.innerHeight  ;
+			var alcada_pantalla_CSS = window.innerWidth ;
+     			var amplada_pantalla_CSS = window.innerHeight ;
 			canvas.width=canvas.width;
 			canvas.style.backgroundColor = '#000000' ;
 			// linia 1/2 camp
@@ -140,6 +142,8 @@ function draw(estat_joc,startx,starty,amplada_pantalla_CSS,alcada_pantalla_CSS,c
 		{
 			ctx.canvas.width  = window.innerWidth  ;
      			ctx.canvas.height = window.innerHeight  ;
+			var alcada_pantalla_CSS = window.innerWidth ;
+     			var amplada_pantalla_CSS = window.innerHeight ;
 			canvas.width=canvas.width;
 			canvas.style.backgroundColor = '#000000' ;
 			
