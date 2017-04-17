@@ -214,7 +214,6 @@ function draw() {
 					window.pos_x_bola = window.pos_x_bola + window.dx ;
 
 			}
-			
 			if ( window.pos_x_bola < 10 ) { 
 			
 					//alert("toca inferior") ; alert("x:" + window.pos_x_bola+ " -- y:"+window.pos_y_bola) ; 
@@ -231,13 +230,12 @@ function draw() {
 					window.pos_y_bola = window.pos_y_bola + window.dy ;
 					
 			}
-			
 			if ( window.pos_y_bola < 10 ) { 
 					
 					// alert("toca esquerra") ; alert("x:" + window.pos_x_bola+ " -- y:"+window.pos_y_bola) ; }
 					window.dy = 1 ;
 					window.pos_y_bola = window.pos_y_bola + window.dy ;
-			
+			}
 			
 		}
 
