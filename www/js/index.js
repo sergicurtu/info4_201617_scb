@@ -190,9 +190,9 @@ function draw() {
 			ctx.fillRect(0,(amplada_pantalla_CSS/2)-1,alcada_pantalla_CSS,3);
 			
 			ctx.fillRect(20, 20, 10, 10);
-			ctx.fillRect(600, 20, 20, 20);
-			ctx.fillRect(20, 340, 30, 30);
-			ctx.fillRect(600, 340, 40, 40);
+			ctx.fillRect(20, 600, 20, 20);
+			ctx.fillRect(340, 20, 30, 30);
+			ctx.fillRect(340, 600, 40, 40);
 			
 			dibuixar_bola(ctx,posicio_x_bola, posicio_y_bola, mida_x_bola);
 			
