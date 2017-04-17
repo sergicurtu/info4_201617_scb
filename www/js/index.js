@@ -204,11 +204,11 @@ function draw() {
 			// LA SEGÜENT POSICIÓ DE LA BOLA TOCARÀ UNA RAQUETA ???  ->  CAL GIRAR //
 			// LA SEGÜENT POSICIÓ DE LA BOLA TOCARÀ EL FONS ???  ->  CAL ANOTAR UN PUNT !!!! //
 			
-			if ( window.pos_x_bola > 600 ) { alert(">350") ; }
-			if ( window.pos_x_bola < 50 ) { alert("<50") ; }
+			//if ( window.pos_x_bola > 600 ) { alert(">350") ; }
+			//if ( window.pos_x_bola < 50 ) { alert("<50") ; }
 			
-			if ( window.pos_y_bola > 350 ) { alert(">350") ; }
-			if ( window.pos_y_bola < 50 ) { alert("<50") ; }
+			//if ( window.pos_y_bola > 350 ) { alert(">350") ; }
+			//if ( window.pos_y_bola < 50 ) { alert("<50") ; }
 			
 			
 			
