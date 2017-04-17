@@ -79,12 +79,11 @@ $(document).on('deviceready', function() {
 		e.preventDefault() ;
 		//alert("Touch_x : " + startx + " --- Touch_y : " + starty);
 		
-		draw(estat_joc,mida_y_bola,posicio_x_bola,posicio_y_bola)	;
-		
 		/*
 		   el estat del joc ens indica com hem de dibuixar les coses
-		   estat = 0 vol dir que acabem de carregar 
+		   estat = 0 vol dir que acabem de carregar . El primer clic fa desapateixer la pantalla amb el text
 		   estat = 1 vol dir que la bola s'hauria de moure sola
+		   setInterval comença a executar la funció cridada cada 10 milisegons
 		*/   
 		if ( estat_joc == 0 ) { 
 		
