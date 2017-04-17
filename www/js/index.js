@@ -215,12 +215,28 @@ function draw() {
 
 			}
 			
-			if ( window.pos_x_bola < 10 ) { alert("toca inferior") ; alert("x:" + window.pos_x_bola+ " -- y:"+window.pos_y_bola) ; }
+			if ( window.pos_x_bola < 10 ) { 
+			
+					//alert("toca inferior") ; alert("x:" + window.pos_x_bola+ " -- y:"+window.pos_y_bola) ; 
+					window.dx = 1 ;
+					window.pos_x_bola = window.pos_x_bola + window.dx ;
+			
+			}
 			
 			// y augmenta cap a la dreta i el seu valor màxim és 640px
-			if ( window.pos_y_bola > 630 ) { alert("toca dreta") ; alert("x:" + window.pos_x_bola+ " -- y:"+window.pos_y_bola) ; }
-			if ( window.pos_y_bola < 10 ) { alert("toca esquerra") ; alert("x:" + window.pos_x_bola+ " -- y:"+window.pos_y_bola) ; }
+			if ( window.pos_y_bola > 630 ) { 
 			
+					//alert("toca dreta") ; alert("x:" + window.pos_x_bola+ " -- y:"+window.pos_y_bola) ; 
+					window.dy = -1 ;
+					window.pos_y_bola = window.pos_y_bola + window.dy ;
+					
+			}
+			
+			if ( window.pos_y_bola < 10 ) { 
+					
+					// alert("toca esquerra") ; alert("x:" + window.pos_x_bola+ " -- y:"+window.pos_y_bola) ; }
+					window.dy = 1 ;
+					window.pos_y_bola = window.pos_y_bola + window.dy ;
 			
 			
 		}
