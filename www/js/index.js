@@ -114,14 +114,14 @@ $(document).on('deviceready', function() {
 	
 });	
 
-function dibuixar_bola{
+function dibuixar_bola(){
 
 	if (estat_joc == 1) {
-		alert("dibixar_bola");
-		draw(estat_joc,mida_x_bola,mida_y_bola,posicio_x_bola,posicio_y_bola) 
+		alert("dibuixar_bola");
+		draw(estat_joc,mida_x_bola,mida_y_bola,posicio_x_bola,posicio_y_bola);
 	)
 	
-}	
+};	
 
 function draw(estat_joc,mida_y_bola,posicio_x_bola,posicio_y_bola) {
 	
