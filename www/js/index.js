@@ -153,7 +153,8 @@ function draw() {
 	
 			
 			ctx.beginPath();
-			   ctx.arc(posicio_x_bola, posicio_y_bola, mida_x_bola, 0, 2 * Math.PI, false);
+			   // x,y => y,x ja que està girada la pantalla // 
+			   ctx.arc(posicio_y_bola, posicio_x_bola, mida_x_bola, 0, 2 * Math.PI, false);
 			   ctx.fillStyle = 'white';
 			   ctx.fill();
 			   ctx.lineWidth = 2;
@@ -180,7 +181,7 @@ function draw() {
 			ctx.fillRect(0,(amplada_pantalla_CSS/2)-1,alcada_pantalla_CSS,3);
 			
 			ctx.beginPath();
-			   ctx.arc(posicio_x_bola, posicio_y_bola, mida_x_bola, 0, 2 * Math.PI, false);
+			   ctx.arc(posicio_y_bola, posicio_x_bola, mida_x_bola, 0, 2 * Math.PI, false);
 			   ctx.fillStyle = 'white';
 			   ctx.fill();
 			   ctx.lineWidth = 2;
