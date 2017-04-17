@@ -162,7 +162,7 @@ function draw() {
 			ctx.closePath();
 			
 			window.pos_x_bola = posicio_x_bola + 1 ;
-			window.pos_y_bola = posicio_y_bola + 1 ;
+			window.pos_y_bola = posicio_y_bola - 1 ;
 			
 		}
 	
@@ -189,7 +189,7 @@ function draw() {
 			ctx.closePath();
 			
 			window.pos_x_bola = posicio_x_bola + 1 ;
-			window.pos_y_bola = posicio_y_bola + 1 ;
+			window.pos_y_bola = posicio_y_bola - 1 ;
 			
 		}
 
