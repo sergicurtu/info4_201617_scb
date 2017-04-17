@@ -189,18 +189,13 @@ function draw() {
 			ctx.fillStyle="#FFFFFF";
 			ctx.fillRect(0,(amplada_pantalla_CSS/2)-1,alcada_pantalla_CSS,3);
 			
-			/*	LA PANTALLA MEDEIX 360 ALTURA i 640 AMPLADA AMB EL (0,0) ABAIX A L'ESQUERRA
+			/*	TEST : LA PANTALLA MEDEIX 360 ALTURA (X) i 640 AMPLADA (Y) AMB EL (0,0) ABAIX A L'ESQUERRA
 				ctx.fillRect(20, 20, 10, 10); 	// inferior esquerra
 				ctx.fillRect(20, 600, 20, 20); 	// inferior dreta
 				ctx.fillRect(340, 20, 30, 30); 	// superior esquerra
 				ctx.fillRect(340, 600, 40, 40); // superior dreta
 			*/
 					
-			dibuixar_bola(ctx,20, 20, 10);
-			dibuixar_bola(ctx,20, 600, 20);
-			dibuixar_bola(ctx,340, 20, 30);
-			dibuixar_bola(ctx,340, 600, 40);
-			
 			dibuixar_bola(ctx,posicio_x_bola, posicio_y_bola, mida_x_bola);
 			
 			window.pos_x_bola = window.pos_x_bola + 1 ;
@@ -210,11 +205,13 @@ function draw() {
 			// LA SEGÜENT POSICIÓ DE LA BOLA TOCARÀ UNA RAQUETA ???  ->  CAL GIRAR //
 			// LA SEGÜENT POSICIÓ DE LA BOLA TOCARÀ EL FONS ???  ->  CAL ANOTAR UN PUNT !!!! //
 			
-			if ( window.pos_x_bola > 550 ) { alert("x>550") ; alert("x:" + window.pos_x_bola+ " -- y:"+window.pos_y_bola) ; }
-			if ( window.pos_x_bola < 100 ) { alert("x<100") ; alert("x:" + window.pos_x_bola+ " -- y:"+window.pos_y_bola) ; }
+			// x augmenta cap adalt i elseu valor màxim és 360px
+			if ( window.pos_x_bola > amplada_pantalla_CSS  - ( mida_y_bola / 2 ) ) { alert("toca superior") ; alert("x:" + window.pos_x_bola+ " -- y:"+window.pos_y_bola) ; }
+			if ( window.pos_x_bola < mida_y_bola / 2 ) { alert("toca inferior") ; alert("x:" + window.pos_x_bola+ " -- y:"+window.pos_y_bola) ; }
 			
-			if ( window.pos_y_bola > 350 ) { alert("y>350") ; alert("x:" + window.pos_x_bola+ " -- y:"+window.pos_y_bola) ; }
-			if ( window.pos_y_bola < 100 ) { alert("y<100") ; alert("x:" + window.pos_x_bola+ " -- y:"+window.pos_y_bola) ; }
+			// y augmenta cap a la dreta i el seu valor màxim és 640px
+			if ( window.pos_y_bola > alcada_pantalla_CSS  - ( mida_y_bola / 2 ) ) { alert("y>350") ; alert("x:" + window.pos_x_bola+ " -- y:"+window.pos_y_bola) ; }
+			if ( window.pos_y_bola < mida_y_bola / 2 ) { alert("y<100") ; alert("x:" + window.pos_x_bola+ " -- y:"+window.pos_y_bola) ; }
 			
 			
 			
