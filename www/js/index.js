@@ -87,6 +87,7 @@ $(document).on('deviceready', function() {
 		*/   
 		if ( estat_joc == 0 ) { 
 		
+			// aquí la posició de la bola és el centre //
 			draw(estat_joc,mida_x_bola,mida_y_bola,posicio_x_bola,posicio_y_bola) ;
 			estat_joc = 1 ; 
 			var loop_bola=setInterval(dibuixar_bola(estat_joc,mida_x_bola,mida_y_bola,posicio_x_bola,posicio_y_bola), 10);
@@ -118,13 +119,13 @@ function dibuixar_bola(estat_joc,mida_x_bola,mida_y_bola,posicio_x_bola,posicio_
 	if (estat_joc == 1) {
 		alert("dibuixar_bola");
 		draw(estat_joc,mida_x_bola,mida_y_bola,posicio_x_bola,posicio_y_bola);
-	)
+	}
 	
 };	
 
 function draw(estat_joc,mida_y_bola,posicio_x_bola,posicio_y_bola) {
 	
-		// alert("cridada la funció DRAW");
+		alert("cridada la funció DRAW");
 		
 		var canvas = document.getElementById('canvas');
 		var ctx = canvas.getContext('2d');
