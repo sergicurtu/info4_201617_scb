@@ -206,12 +206,12 @@ function draw() {
 			// LA SEGÜENT POSICIÓ DE LA BOLA TOCARÀ EL FONS ???  ->  CAL ANOTAR UN PUNT !!!! //
 			
 			// x augmenta cap adalt i elseu valor màxim és 360px
-			if ( window.pos_x_bola > amplada_pantalla_CSS  - ( mida_y_bola / 2 ) ) { alert("toca superior") ; alert("x:" + window.pos_x_bola+ " -- y:"+window.pos_y_bola) ; }
-			if ( window.pos_x_bola < mida_y_bola / 2 ) { alert("toca inferior") ; alert("x:" + window.pos_x_bola+ " -- y:"+window.pos_y_bola) ; }
+			if ( window.pos_x_bola > 350 ) { alert("toca superior") ; alert("x:" + window.pos_x_bola+ " -- y:"+window.pos_y_bola) ; }
+			if ( window.pos_x_bola < 10 ) { alert("toca inferior") ; alert("x:" + window.pos_x_bola+ " -- y:"+window.pos_y_bola) ; }
 			
 			// y augmenta cap a la dreta i el seu valor màxim és 640px
-			if ( window.pos_y_bola > alcada_pantalla_CSS  - ( mida_y_bola / 2 ) ) { alert("y>350") ; alert("x:" + window.pos_x_bola+ " -- y:"+window.pos_y_bola) ; }
-			if ( window.pos_y_bola < mida_y_bola / 2 ) { alert("y<100") ; alert("x:" + window.pos_x_bola+ " -- y:"+window.pos_y_bola) ; }
+			if ( window.pos_y_bola > 630 ) { alert("toca dreta") ; alert("x:" + window.pos_x_bola+ " -- y:"+window.pos_y_bola) ; }
+			if ( window.pos_y_bola < 10 ) { alert("toca esquerra") ; alert("x:" + window.pos_x_bola+ " -- y:"+window.pos_y_bola) ; }
 			
 			
 			
