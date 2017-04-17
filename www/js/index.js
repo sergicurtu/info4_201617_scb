@@ -60,6 +60,9 @@ $(document).on('deviceready', function() {
 	var posicio_x_bola = centre_x - ( mida_x_bola / 2 ) ;
 	var posicio_y_bola = centre_y - ( mida_y_bola / 2 ) ;
 	
+	window.mida_x_bola = mida_x_bola ;
+	window.mida_y_bola = mida_y_bola ;
+	
 	var estat_joc = 0 ;
 				  
 	document.addEventListener("offline", function() { 
@@ -89,10 +92,12 @@ $(document).on('deviceready', function() {
 		
 			// aquí la posició de la bola és el centre //
 			draw(estat_joc,mida_x_bola,mida_y_bola,posicio_x_bola,posicio_y_bola) ;
-			estat_joc = 1 ; 
 			
-			setInterval( dibuixar_bola(estat_joc,mida_x_bola,mida_y_bola,window.x_bola,window.y_bola), 10);
-									    // function(){ alert("Hello"); }
+			estat_joc = 1 ; 
+			window.estat_joc = 1 :;
+			
+			setInterval( dibuixar_bola , 10);
+							
 		
 		}
 		
@@ -110,14 +115,19 @@ $(document).on('deviceready', function() {
 		
 	 });
 	
-		
-	
-	
 	
 });	
 
-function dibuixar_bola(estat_joc,mida_x_bola,mida_y_bola,posicio_x_bola,posicio_y_bola){
-
+function dibuixar_bola(){
+	
+	// estat_joc,mida_x_bola,mida_y_bola,window.x_bola,window.y_bola //
+	
+	var estat_joc = window.estat_joc ;
+	var mida_x_bola = window.mida_x_bola ;
+	var mida_y_bola = window.mida_y_bola ;
+	var posicio_x_bola = window.x_bola ;
+	var posicio_y_bola = window.y_bola ;
+	
 	if (estat_joc == 1) {
 		
 		//alert("dibuixar_bola -> estat : " + estat_joc + " - mida_x_bola : " + mida_x_bola + " - mida_y_bola : " + mida_y_bola + " - posicio_x_bola : " + posicio_x_bola + " - posicio_y_bola : " + posicio_y_bola  );
