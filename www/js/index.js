@@ -82,6 +82,10 @@ $(document).on('deviceready', function() {
 		var startx = parseInt(touchobj.clientX) ; // quina és la posició x en referència al costat esquerra de la pantalla
 		var starty = parseInt(touchobj.clientY) ;
 		
+		// les assignem a variables de sistema // 
+		window.clic_x = startx ;
+		window.clic_y = starty ;
+		
 		e.preventDefault() ;
 		//alert("Touch_x : " + startx + " --- Touch_y : " + starty);
 		
@@ -93,12 +97,14 @@ $(document).on('deviceready', function() {
 		*/   
 		if ( estat_joc == 0 ) { 
 		
-			// aquí la posició de la bola és el centre (?) //
+			// dibuixem la bola per primera vegada //
 			draw() ;
 			
+			// ara entrem a la fase del joc 0 --> 1 //
 			estat_joc = 1 ; 
 			window.estat_joc = 1 ;
 			
+			// ara cridem la funció draw (un loop) cada 10 milisegons 
 			setInterval( draw , 10 );
 							
 		
@@ -132,8 +138,10 @@ function draw() {
 		var estat_joc = window.estat_joc ;
 		var mida_x_bola = window.mida_x_bola ;
 		var mida_y_bola = window.mida_y_bola ;
-		var posicio_x_bola = window.pos_x_bola ;
-		var posicio_y_bola = window.pos_y_bola ;
+		
+		// x,y => y,x ja que està girada la pantalla // 
+		var posicio_x_bola = window.pos_y_bola ;
+		var posicio_y_bola = window.pos_x_bola ;
 	
 		
 		
@@ -153,8 +161,8 @@ function draw() {
 	
 			
 			ctx.beginPath();
-			   // x,y => y,x ja que està girada la pantalla // 
-			   ctx.arc(posicio_y_bola, posicio_x_bola, mida_x_bola, 0, 2 * Math.PI, false);
+			   
+			   ctx.arc(posicio_x_bola, posicio_y_bola, mida_x_bola, 0, 2 * Math.PI, false);
 			   ctx.fillStyle = 'white';
 			   ctx.fill();
 			   ctx.lineWidth = 2;
@@ -181,7 +189,7 @@ function draw() {
 			ctx.fillRect(0,(amplada_pantalla_CSS/2)-1,alcada_pantalla_CSS,3);
 			
 			ctx.beginPath();
-			   ctx.arc(posicio_y_bola, posicio_x_bola, mida_x_bola, 0, 2 * Math.PI, false);
+			   ctx.arc(posicio_x_bola, posicio_y_bola, mida_x_bola, 0, 2 * Math.PI, false);
 			   ctx.fillStyle = 'white';
 			   ctx.fill();
 			   ctx.lineWidth = 2;
@@ -191,6 +199,18 @@ function draw() {
 			
 			window.pos_x_bola = posicio_x_bola + 1 ;
 			window.pos_y_bola = posicio_y_bola - 1 ;
+			
+			// LA SEGÜENT POSICIÓ DE LA BOLA TOCARÀ UNA VORA ???  ->  CAL GIRAR //
+			// LA SEGÜENT POSICIÓ DE LA BOLA TOCARÀ UNA RAQUETA ???  ->  CAL GIRAR //
+			// LA SEGÜENT POSICIÓ DE LA BOLA TOCARÀ EL FONS ???  ->  CAL ANOTAR UN PUNT !!!! //
+			
+			if ( window.pos_x_bola > 600 ) { alert(">350") ; }
+			if ( window.pos_x_bola < 50 ) { alert("<50") ; }
+			
+			if ( window.pos_y_bola > 350 ) { alert(">350") ; }
+			if ( window.pos_y_bola < 50 ) { alert("<50") ; }
+			
+			
 			
 		}
 
