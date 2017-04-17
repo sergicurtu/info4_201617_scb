@@ -79,7 +79,7 @@ $(document).on('deviceready', function() {
 		e.preventDefault() ;
 		//alert("Touch_x : " + startx + " --- Touch_y : " + starty);
 		
-		draw(estat_joc,startx,starty,amplada_pantalla_CSS,alcada_pantalla_CSS,centre_x,centre_y,mida_x_bola,mida_y_bola,posicio_x_bola,posicio_y_bola)	;
+		draw(estat_joc,mida_y_bola,posicio_x_bola,posicio_y_bola)	;
 		
 		/*
 		   el estat del joc ens indica com hem de dibuixar les coses
