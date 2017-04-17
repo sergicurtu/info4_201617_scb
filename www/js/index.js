@@ -62,6 +62,8 @@ $(document).on('deviceready', function() {
 	
 	window.mida_x_bola = mida_x_bola ;
 	window.mida_y_bola = mida_y_bola ;
+	window.pos_x_bola = posicio_x_bola ;
+	window.pos_y_bola = posicio_y_bola ;
 	
 	var estat_joc = 0 ;
 				  
@@ -96,7 +98,7 @@ $(document).on('deviceready', function() {
 			estat_joc = 1 ; 
 			window.estat_joc = 1 :;
 			
-			setInterval( dibuixar_bola , 10);
+			setInterval( dibuixar_bola , 10 );
 							
 		
 		}
@@ -120,13 +122,13 @@ $(document).on('deviceready', function() {
 
 function dibuixar_bola(){
 	
-	// estat_joc,mida_x_bola,mida_y_bola,window.x_bola,window.y_bola //
+	// estat_joc,mida_x_bola,mida_y_bola,window.pos_x_bola,window.pos_y_bola //
 	
 	var estat_joc = window.estat_joc ;
 	var mida_x_bola = window.mida_x_bola ;
 	var mida_y_bola = window.mida_y_bola ;
-	var posicio_x_bola = window.x_bola ;
-	var posicio_y_bola = window.y_bola ;
+	var posicio_x_bola = window.pos_x_bola ;
+	var posicio_y_bola = window.pos_y_bola ;
 	
 	if (estat_joc == 1) {
 		
@@ -168,8 +170,8 @@ function draw(estat_joc,mida_x_bola,mida_y_bola,posicio_x_bola,posicio_y_bola) {
 			   ctx.stroke();
 			ctx.closePath();
 			
-			window.x_bola = posicio_x_bola + 1 ;
-			window.y_bola = posicio_y_bola + 1 ;
+			window.pos_x_bola = posicio_x_bola + 1 ;
+			window.pos_y_bola = posicio_y_bola + 1 ;
 			
 		}
 	
@@ -195,8 +197,8 @@ function draw(estat_joc,mida_x_bola,mida_y_bola,posicio_x_bola,posicio_y_bola) {
 			   ctx.stroke();
 			ctx.closePath();
 			
-			window.x_bola = posicio_x_bola + 1 ;
-			window.y_bola = posicio_y_bola + 1 ;
+			window.pos_x_bola = posicio_x_bola + 1 ;
+			window.pos_y_bola = posicio_y_bola + 1 ;
 			
 		}
 	
