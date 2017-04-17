@@ -189,10 +189,17 @@ function draw() {
 			ctx.fillStyle="#FFFFFF";
 			ctx.fillRect(0,(amplada_pantalla_CSS/2)-1,alcada_pantalla_CSS,3);
 			
-			ctx.fillRect(20, 20, 10, 10);
-			ctx.fillRect(20, 600, 20, 20);
-			ctx.fillRect(340, 20, 30, 30);
-			ctx.fillRect(340, 600, 40, 40);
+			/*	LA PANTALLA MEDEIX 360 ALTURA i 640 AMPLADA AMB EL (0,0) ABAIX A L'ESQUERRA
+				ctx.fillRect(20, 20, 10, 10); 	// inferior esquerra
+				ctx.fillRect(20, 600, 20, 20); 	// inferior dreta
+				ctx.fillRect(340, 20, 30, 30); 	// superior esquerra
+				ctx.fillRect(340, 600, 40, 40); // superior dreta
+			*/
+					
+			dibuixar_bola(ctx,20, 20, 10);
+			dibuixar_bola(ctx,20, 600, 20);
+			dibuixar_bola(ctx,340, 20, 30);
+			dibuixar_bola(ctx,340, 600, 40);
 			
 			dibuixar_bola(ctx,posicio_x_bola, posicio_y_bola, mida_x_bola);
 			
