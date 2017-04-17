@@ -115,20 +115,18 @@ function draw(estat_joc,startx,starty,amplada_pantalla_CSS,alcada_pantalla_CSS,c
 		var canvas = document.getElementById('canvas');
 		var ctx = canvas.getContext('2d');
 		
-		// en primier lloc he de netejar el canvas
-		canvas.width=canvas.width;
-		canvas.style.backgroundColor = '#000000' ;
-	
-		// linia 1/2 camp
-		ctx.fillStyle="#FFFFFF";
-		ctx.fillRect(0,(amplada_pantalla_CSS/2)-1,alcada_pantalla_CSS,3);
-	
-		// Dibuixar PILOTA
-		// ctx.fillStyle="#FFFFFF";
-          	// ctx.fillRect(startx,starty,20,20);
-		
 		if (estat_joc == 0) 
 		{
+			// aquesta és la primera vegada que redibuixem la pantalla
+			ctx.canvas.width  = window.innerWidth  ;
+     			ctx.canvas.height = window.innerHeight  ;
+			canvas.width=canvas.width;
+			canvas.style.backgroundColor = '#000000' ;
+			// linia 1/2 camp
+			ctx.fillStyle="#FFFFFF";
+			ctx.fillRect(0,(amplada_pantalla_CSS/2)-1,alcada_pantalla_CSS,3);
+	
+			
 			ctx.beginPath();
 			ctx.arc(posicio_x_bola, posicio_y_bola, mida_x_bola, 0, 2 * Math.PI, false);
 			ctx.fillStyle = 'white';
@@ -140,6 +138,15 @@ function draw(estat_joc,startx,starty,amplada_pantalla_CSS,alcada_pantalla_CSS,c
 	
 		if (estat_joc == 1) 
 		{
+			ctx.canvas.width  = window.innerWidth  ;
+     			ctx.canvas.height = window.innerHeight  ;
+			canvas.width=canvas.width;
+			canvas.style.backgroundColor = '#000000' ;
+			
+			// linia 1/2 camp
+			ctx.fillStyle="#FFFFFF";
+			ctx.fillRect(0,(amplada_pantalla_CSS/2)-1,alcada_pantalla_CSS,3);
+			
 			ctx.beginPath();
 			ctx.arc(startx, starty, mida_x_bola, 0, 2 * Math.PI, false);
 			ctx.fillStyle = 'white';
