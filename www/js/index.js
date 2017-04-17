@@ -66,6 +66,7 @@ $(document).on('deviceready', function() {
 	window.pos_y_bola = posicio_y_bola ;
 	
 	var estat_joc = 0 ;
+	window.estat_joc = 0 ;
 				  
 	document.addEventListener("offline", function() { 
 		// alert("ara NO HI HA internet");
@@ -92,13 +93,13 @@ $(document).on('deviceready', function() {
 		*/   
 		if ( estat_joc == 0 ) { 
 		
-			// aquí la posició de la bola és el centre //
-			draw(estat_joc,mida_x_bola,mida_y_bola,posicio_x_bola,posicio_y_bola) ;
+			// aquí la posició de la bola és el centre (?) //
+			draw() ;
 			
 			estat_joc = 1 ; 
-			window.estat_joc = 1 :;
+			window.estat_joc = 1 ;
 			
-			setInterval( dibuixar_bola , 10 );
+			setInterval( draw , 10 );
 							
 		
 		}
@@ -120,31 +121,21 @@ $(document).on('deviceready', function() {
 	
 });	
 
-function dibuixar_bola(){
-	
-	// estat_joc,mida_x_bola,mida_y_bola,window.pos_x_bola,window.pos_y_bola //
-	
-	var estat_joc = window.estat_joc ;
-	var mida_x_bola = window.mida_x_bola ;
-	var mida_y_bola = window.mida_y_bola ;
-	var posicio_x_bola = window.pos_x_bola ;
-	var posicio_y_bola = window.pos_y_bola ;
-	
-	if (estat_joc == 1) {
-		
-		//alert("dibuixar_bola -> estat : " + estat_joc + " - mida_x_bola : " + mida_x_bola + " - mida_y_bola : " + mida_y_bola + " - posicio_x_bola : " + posicio_x_bola + " - posicio_y_bola : " + posicio_y_bola  );
-		draw(estat_joc,mida_x_bola,mida_y_bola,posicio_x_bola,posicio_y_bola);
-		
-	}
-	
-};	
 
-function draw(estat_joc,mida_x_bola,mida_y_bola,posicio_x_bola,posicio_y_bola) {
+function draw() {
 	
 		// alert("cridada la funció DRAW");
 		
 		var canvas = document.getElementById('canvas');
 		var ctx = canvas.getContext('2d');
+			
+		var estat_joc = window.estat_joc ;
+		var mida_x_bola = window.mida_x_bola ;
+		var mida_y_bola = window.mida_y_bola ;
+		var posicio_x_bola = window.pos_x_bola ;
+		var posicio_y_bola = window.pos_y_bola ;
+	
+		
 		
 		if (estat_joc == 0) 
 		{
@@ -201,10 +192,6 @@ function draw(estat_joc,mida_x_bola,mida_y_bola,posicio_x_bola,posicio_y_bola) {
 			window.pos_y_bola = posicio_y_bola + 1 ;
 			
 		}
-	
-	
 
-		
-		
 		
 }
