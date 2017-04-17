@@ -54,7 +54,7 @@ $(document).on('deviceready', function() {
 	// ctx.fillText("Toca la pantalla per començar",10,90);
 	
 	
-	// Quina posició la bola ? Temin present que la bola ocupa un espai 	// quina mida la bola ?
+	// Quina posició INICIAL de la bola ? Temin present que la bola ocupa un espai 	// quina mida la bola ?
 	var mida_x_bola = amplada_pantalla_CSS * ( 2/100 ) ; 
 	var mida_y_bola = mida_x_bola ;  // 36 ;
 	var posicio_x_bola = centre_x - ( mida_x_bola / 2 ) ;
@@ -136,11 +136,12 @@ function draw(estat_joc,mida_x_bola,mida_y_bola,posicio_x_bola,posicio_y_bola) {
 		{
 			// aquesta és la primera vegada que redibuixem la pantalla
 			ctx.canvas.width  = window.innerWidth  ;
-     			ctx.canvas.height = window.innerHeight  ;
+     		ctx.canvas.height = window.innerHeight  ;
 			var alcada_pantalla_CSS = window.innerWidth ;
-     			var amplada_pantalla_CSS = (window.innerHeight)+10 ;
+     		var amplada_pantalla_CSS = (window.innerHeight)+10 ;
 			canvas.width=canvas.width;
 			canvas.style.backgroundColor = '#000000' ;
+			
 			// linia 1/2 camp
 			ctx.fillStyle="#FFFFFF";
 			ctx.fillRect(0,(amplada_pantalla_CSS/2)-1,alcada_pantalla_CSS,3);
@@ -159,9 +160,9 @@ function draw(estat_joc,mida_x_bola,mida_y_bola,posicio_x_bola,posicio_y_bola) {
 		if (estat_joc == 1) 
 		{
 			ctx.canvas.width  = window.innerWidth  ;
-     			ctx.canvas.height = window.innerHeight  ;
+     		ctx.canvas.height = window.innerHeight  ;
 			var alcada_pantalla_CSS = window.innerWidth ;
-     			var amplada_pantalla_CSS = (window.innerHeight)+10 ;
+     		var amplada_pantalla_CSS = (window.innerHeight)+10 ;
 			canvas.width=canvas.width;
 			canvas.style.backgroundColor = '#000000' ;
 			
@@ -170,7 +171,7 @@ function draw(estat_joc,mida_x_bola,mida_y_bola,posicio_x_bola,posicio_y_bola) {
 			ctx.fillRect(0,(amplada_pantalla_CSS/2)-1,alcada_pantalla_CSS,3);
 			
 			ctx.beginPath();
-			   ctx.arc(startx, starty, mida_x_bola, 0, 2 * Math.PI, false);
+			   ctx.arc(posicio_x_bola, posicio_y_bola, mida_x_bola, 0, 2 * Math.PI, false);
 			   ctx.fillStyle = 'white';
 			   ctx.fill();
 			   ctx.lineWidth = 2;
