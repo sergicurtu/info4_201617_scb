@@ -171,6 +171,10 @@ function draw() {
 	
 			dibuixar_bola(ctx,posicio_x_bola, posicio_y_bola, mida_x_bola);
 			
+			// definim els primers desplaçaments ( aleatoris ? )
+			window.dx = 1 ;
+			window.dy = -1 ;
+			
 		}
 	
 		if (estat_joc == 1) 
@@ -195,15 +199,22 @@ function draw() {
 					
 			dibuixar_bola(ctx,posicio_x_bola, posicio_y_bola, mida_x_bola);
 			
-			window.pos_x_bola = window.pos_x_bola + 1 ;
-			window.pos_y_bola = window.pos_y_bola  ;
+			window.pos_x_bola = window.pos_x_bola + window.dx ;
+			window.pos_y_bola = window.pos_y_bola + window.dy ;
 			
 			// LA SEGÜENT POSICIÓ DE LA BOLA TOCARÀ UNA VORA ???  ->  CAL GIRAR //
 			// LA SEGÜENT POSICIÓ DE LA BOLA TOCARÀ UNA RAQUETA ???  ->  CAL GIRAR //
 			// LA SEGÜENT POSICIÓ DE LA BOLA TOCARÀ EL FONS ???  ->  CAL ANOTAR UN PUNT !!!! //
 			
 			// x augmenta cap adalt i elseu valor màxim és 360px
-			if ( window.pos_x_bola > 350 ) { alert("toca superior") ; alert("x:" + window.pos_x_bola+ " -- y:"+window.pos_y_bola) ; }
+			if ( window.pos_x_bola > 350 ) { 
+			
+					// alert("toca superior") ; alert("x:" + window.pos_x_bola+ " -- y:"+window.pos_y_bola) ;
+					window.dx = -1 ;
+					window.pos_x_bola = window.pos_x_bola + window.dx ;
+
+			}
+			
 			if ( window.pos_x_bola < 10 ) { alert("toca inferior") ; alert("x:" + window.pos_x_bola+ " -- y:"+window.pos_y_bola) ; }
 			
 			// y augmenta cap a la dreta i el seu valor màxim és 640px
