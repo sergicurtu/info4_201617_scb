@@ -61,8 +61,8 @@ $(document).on('deviceready', function() {
 	window.mida_y_bola = mida_y_bola ;
 	
 	// x,y => y,x ja que està girada la pantalla // 
-	window.pos_x_bola = centre_y - ( mida_y_bola / 2 ) ;
-	window.pos_y_bola = centre_x - ( mida_x_bola / 2 ) ; ;
+	window.pos_x_bola = ( alcada_pantalla_CSS / 2 )  - ( mida_x_bola / 2 ) ;
+	window.pos_y_bola = ( amplada_pantalla_CSS / 2 ) - ( mida_y_bola / 2 ) ; ;
 	
 	var estat_joc = 0 ;
 	window.estat_joc = 0 ;
@@ -202,11 +202,11 @@ function draw() {
 			// LA SEGÜENT POSICIÓ DE LA BOLA TOCARÀ UNA RAQUETA ???  ->  CAL GIRAR //
 			// LA SEGÜENT POSICIÓ DE LA BOLA TOCARÀ EL FONS ???  ->  CAL ANOTAR UN PUNT !!!! //
 			
-			//if ( window.pos_x_bola > 600 ) { alert(">350") ; }
-			//if ( window.pos_x_bola < 50 ) { alert("<50") ; }
+			//if ( window.pos_x_bola > 600 ) { alert("x>350") ; }
+			//if ( window.pos_x_bola < 50 ) { alert("x<50") ; }
 			
-			//if ( window.pos_y_bola > 350 ) { alert(">350") ; }
-			//if ( window.pos_y_bola < 50 ) { alert("<50") ; }
+			//if ( window.pos_y_bola > 350 ) { alert("y>350") ; }
+			//if ( window.pos_y_bola < 50 ) { alert("y<50") ; }
 			
 			
 			
