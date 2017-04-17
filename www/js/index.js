@@ -126,7 +126,20 @@ $(document).on('deviceready', function() {
 	
 });	
 
-
+function dibuixar_bola(ctx,posicio_x_bola, posicio_y_bola, mida_x_bola) {
+	
+	ctx.beginPath();
+	   ctx.arc(posicio_x_bola, posicio_y_bola, mida_x_bola, 0, 2 * Math.PI, false);
+	   ctx.fillStyle = 'white';
+	   ctx.fill();
+	   ctx.lineWidth = 2;
+	   ctx.strokeStyle = 'yellow';
+	   ctx.stroke();
+	ctx.closePath();
+			
+	
+	
+}
 function draw() {
 	
 		// alert("cridada la funció DRAW");
@@ -141,8 +154,7 @@ function draw() {
 		var posicio_x_bola = window.pos_x_bola ;
 		var posicio_y_bola = window.pos_y_bola ;
 	
-		
-		
+	
 		if (estat_joc == 0) 
 		{
 			// aquesta és la primera vegada que redibuixem la pantalla
@@ -157,16 +169,16 @@ function draw() {
 			ctx.fillStyle="#FFFFFF";
 			ctx.fillRect(0,(amplada_pantalla_CSS/2)-1,alcada_pantalla_CSS,3);
 	
-			
-			ctx.beginPath();
-			   
-			   ctx.arc(posicio_x_bola, posicio_y_bola, mida_x_bola, 0, 2 * Math.PI, false);
-			   ctx.fillStyle = 'white';
-			   ctx.fill();
-			   ctx.lineWidth = 2;
-			   ctx.strokeStyle = 'yellow';
-			   ctx.stroke();
-			ctx.closePath();
+			// testejar coordenadors pantalla //
+			dibuixar_bola(ctx,0, 0, mida_x_bola);
+			dibuixar_bola(ctx,320, 0, mida_x_bola);
+			dibuixar_bola(ctx,640, 0, mida_x_bola);
+			dibuixar_bola(ctx,0, 90, mida_x_bola);
+			dibuixar_bola(ctx,0, 180, mida_x_bola);
+			dibuixar_bola(ctx,0, 360, mida_x_bola);
+			dibuixar_bola(ctx,640, 360, mida_x_bola);
+	
+			dibuixar_bola(ctx,posicio_x_bola, posicio_y_bola, mida_x_bola);
 			
 			window.pos_x_bola = window.pos_x_bola + 1 ;
 			window.pos_y_bola = window.pos_y_bola - 1 ;
@@ -186,14 +198,7 @@ function draw() {
 			ctx.fillStyle="#FFFFFF";
 			ctx.fillRect(0,(amplada_pantalla_CSS/2)-1,alcada_pantalla_CSS,3);
 			
-			ctx.beginPath();
-			   ctx.arc(posicio_x_bola, posicio_y_bola, mida_x_bola, 0, 2 * Math.PI, false);
-			   ctx.fillStyle = 'white';
-			   ctx.fill();
-			   ctx.lineWidth = 2;
-			   ctx.strokeStyle = 'yellow';
-			   ctx.stroke();
-			ctx.closePath();
+			dibuixar_bola(ctx,posicio_x_bola, posicio_y_bola, mida_x_bola);
 			
 			window.pos_x_bola = window.pos_x_bola + 1 ;
 			window.pos_y_bola = window.pos_y_bola - 1 ;
