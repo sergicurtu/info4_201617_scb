@@ -91,7 +91,7 @@ $(document).on('deviceready', function() {
 			draw(estat_joc,mida_x_bola,mida_y_bola,posicio_x_bola,posicio_y_bola) ;
 			estat_joc = 1 ; 
 			
-			var loop_bola = setInterval(dibuixar_bola(estat_joc,mida_x_bola,mida_y_bola,posicio_x_bola,posicio_y_bola), 10);
+			setInterval( dibuixar_bola(estat_joc,mida_x_bola,mida_y_bola,window.x_bola,window.y_bola), 10);
 									    // function(){ alert("Hello"); }
 		
 		}
@@ -119,8 +119,10 @@ $(document).on('deviceready', function() {
 function dibuixar_bola(estat_joc,mida_x_bola,mida_y_bola,posicio_x_bola,posicio_y_bola){
 
 	if (estat_joc == 1) {
-		alert("dibuixar_bola -> estat : " + estat_joc + " - mida_x_bola : " + mida_x_bola + " - mida_y_bola : " + mida_y_bola + " - posicio_x_bola : " + posicio_x_bola + " - posicio_y_bola : " + posicio_y_bola  );
+		
+		//alert("dibuixar_bola -> estat : " + estat_joc + " - mida_x_bola : " + mida_x_bola + " - mida_y_bola : " + mida_y_bola + " - posicio_x_bola : " + posicio_x_bola + " - posicio_y_bola : " + posicio_y_bola  );
 		draw(estat_joc,mida_x_bola,mida_y_bola,posicio_x_bola,posicio_y_bola);
+		
 	}
 	
 };	
@@ -155,6 +157,10 @@ function draw(estat_joc,mida_x_bola,mida_y_bola,posicio_x_bola,posicio_y_bola) {
 			   ctx.strokeStyle = 'yellow';
 			   ctx.stroke();
 			ctx.closePath();
+			
+			window.x_bola = posicio_x_bola + 1 ;
+			window.y_bola = posicio_y_bola + 1 ;
+			
 		}
 	
 		if (estat_joc == 1) 
@@ -178,6 +184,10 @@ function draw(estat_joc,mida_x_bola,mida_y_bola,posicio_x_bola,posicio_y_bola) {
 			   ctx.strokeStyle = 'yellow';
 			   ctx.stroke();
 			ctx.closePath();
+			
+			window.x_bola = posicio_x_bola + 1 ;
+			window.y_bola = posicio_y_bola + 1 ;
+			
 		}
 	
 	
