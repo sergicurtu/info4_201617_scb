@@ -90,7 +90,7 @@ $(document).on('deviceready', function() {
 		
 			draw(estat_joc,mida_x_bola,mida_y_bola,posicio_x_bola,posicio_y_bola) ;
 			estat_joc = 1 ; 
-			setInterval(dibuixar_bola, 10);
+			var loop_bola=setInterval(dibuixar_bola, 10);
 		
 		}
 		
