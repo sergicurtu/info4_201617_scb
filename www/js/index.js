@@ -86,7 +86,12 @@ $(document).on('deviceready', function() {
 		   estat = 0 vol dir que acabem de carregar 
 		   estat = 1 vol dir que la bola s'hauria de moure sola
 		*/   
-		if ( estat_joc == 0 ) { estat_joc = 1 ; }
+		if ( estat_joc == 0 ) { 
+		
+			draw(estat_joc,mida_x_bola,mida_y_bola,posicio_x_bola,posicio_y_bola) ;
+			estat_joc = 1 ; 
+		
+		}
 		
 		
 	});	
@@ -102,13 +107,20 @@ $(document).on('deviceready', function() {
 		
 	 });
 	
-	
+	if (estat_joc == 1) {
+		
+		setInterval(
+				draw(estat_joc,mida_x_bola,mida_y_bola,posicio_x_bola,posicio_y_bola) , 
+				10);
+		
+		
+	}	
 	
 });	
 	
 
 
-function draw(estat_joc,startx,starty,amplada_pantalla_CSS,alcada_pantalla_CSS,centre_x,centre_y,mida_x_bola,mida_y_bola,posicio_x_bola,posicio_y_bola) {
+function draw(estat_joc,mida_y_bola,posicio_x_bola,posicio_y_bola) {
 	
 		// alert("cridada la funció DRAW");
 		
@@ -130,12 +142,13 @@ function draw(estat_joc,startx,starty,amplada_pantalla_CSS,alcada_pantalla_CSS,c
 	
 			
 			ctx.beginPath();
-			ctx.arc(posicio_x_bola, posicio_y_bola, mida_x_bola, 0, 2 * Math.PI, false);
-			ctx.fillStyle = 'white';
-			ctx.fill();
-			ctx.lineWidth = 2;
-			ctx.strokeStyle = 'yellow';
-			ctx.stroke();
+			   ctx.arc(posicio_x_bola, posicio_y_bola, mida_x_bola, 0, 2 * Math.PI, false);
+			   ctx.fillStyle = 'white';
+			   ctx.fill();
+			   ctx.lineWidth = 2;
+			   ctx.strokeStyle = 'yellow';
+			   ctx.stroke();
+			ctx.closePath();
 		}
 	
 		if (estat_joc == 1) 
@@ -152,12 +165,13 @@ function draw(estat_joc,startx,starty,amplada_pantalla_CSS,alcada_pantalla_CSS,c
 			ctx.fillRect(0,(amplada_pantalla_CSS/2)-1,alcada_pantalla_CSS,3);
 			
 			ctx.beginPath();
-			ctx.arc(startx, starty, mida_x_bola, 0, 2 * Math.PI, false);
-			ctx.fillStyle = 'white';
-			ctx.fill();
-			ctx.lineWidth = 2;
-			ctx.strokeStyle = 'yellow';
-			ctx.stroke();
+			   ctx.arc(startx, starty, mida_x_bola, 0, 2 * Math.PI, false);
+			   ctx.fillStyle = 'white';
+			   ctx.fill();
+			   ctx.lineWidth = 2;
+			   ctx.strokeStyle = 'yellow';
+			   ctx.stroke();
+			ctx.closePath();
 		}
 	
 	
