@@ -282,9 +282,22 @@ function draw() {
 			//if ( window.pos_y_bola < 10 ) { 
 			if ( window.pos_y_bola < ( window.radi_bola + window.posicio_y_pala_E + window.mida_y_pala_E )  ) { 
 					
+					// si posició x de la bola coincideix amb la barra ha de rebotar
+					// cas contrari avança fins GOL
 					// alert("toca esquerra") ; alert("x:" + window.pos_x_bola+ " -- y:"+window.pos_y_bola) ; }
-					window.dy = 1 ;
-					window.pos_y_bola = window.pos_y_bola + window.dy ;
+					
+					if ( 	 
+							 (   window.pos_x_bola < window.radi_bola + window.posicio_x_pala_E +  window.mida_x_pala_E )
+								 &&
+  							 (   window.pos_x_bola > window.posicio_x_pala_E - window.radi_bola  ) 
+						)
+					{	
+						window.dy = 1 ;
+						window.pos_y_bola = window.pos_y_bola + window.dy ;
+					}	
+					
+					
+					
 			}
 			
 		}
