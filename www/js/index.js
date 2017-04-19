@@ -64,6 +64,23 @@ $(document).on('deviceready', function() {
 	window.pos_x_bola = ( alcada_pantalla_CSS / 2 )  - ( mida_x_bola / 2 ) ;
 	window.pos_y_bola = ( amplada_pantalla_CSS / 2 ) - ( mida_y_bola / 2 ) ; ;
 	
+	// DEFINIM LES PALES i LES SEVES POSICIONS INICALS
+	// posicio_x_pala_E,posicio_y_pala_E,mida_x_pala_E,mida_y_pala_E
+	// posicio_x_pala_D,posicio_y_pala_D,mida_x_pala_D,mida_y_pala_D
+	
+	window.posicio_x_pala_E = 10  ;
+	window.posicio_y_pala_E = 130  ;
+	window.mida_x_pala_E =  100 ;
+	window.mida_y_pala_E =  20 ;
+	
+	window.posicio_x_pala_D = 610  ;
+	window.posicio_y_pala_D = 130  ;
+	window.mida_x_pala_D =  100 ;
+	window.mida_y_pala_D =  20 ;
+	
+	
+	
+	
 	var estat_joc = 0 ;
 	window.estat_joc = 0 ;
 				  
@@ -125,6 +142,24 @@ $(document).on('deviceready', function() {
 	
 	
 });	
+
+function dibuixar_pala_esquerra(ctx,posicio_x_pala_E,posicio_y_pala_E,mida_x_pala_E,mida_y_pala_E){
+	
+	ctx.beginPath();
+	   ctx.fillStyle = '#FA5858';
+	   ctx.fillRect(posicio_x_pala_E,posicio_y_pala_E,mida_x_pala_E,mida_y_pala_E);
+	ctx.closePath();
+	
+}
+
+function dibuixar_pala_dreta(ctx,posicio_x_pala_D,posicio_y_pala_D,mida_x_pala_D,mida_y_pala_D){
+	
+	ctx.beginPath();
+	   ctx.fillStyle = '#ACFA58';
+	   ctx.fillRect(posicio_x_pala_D,posicio_y_pala_D,mida_x_pala_D,mida_y_pala_D);
+	ctx.closePath();
+	
+}
 
 function dibuixar_bola(ctx,posicio_x_bola, posicio_y_bola, mida_x_bola) {
 	
@@ -198,6 +233,13 @@ function draw() {
 			*/
 					
 			dibuixar_bola(ctx,posicio_x_bola, posicio_y_bola, mida_x_bola);
+			
+			
+			// on dibuixarem les pales ?
+			
+			
+			dibuixar_pala_esquerra(ctx,window.posicio_x_pala_E,window.posicio_y_pala_E,window.mida_x_pala_E,window.mida_y_pala_E);
+			dibuixar_pala_dreta(ctx,window.posicio_x_pala_D,window.posicio_y_pala_D,window.mida_x_pala_D,window.mida_y_pala_D);
 			
 			window.pos_x_bola = window.pos_x_bola + window.dx ;
 			window.pos_y_bola = window.pos_y_bola + window.dy ;
