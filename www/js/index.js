@@ -272,7 +272,7 @@ function draw() {
 			
 			// y augmenta cap a la dreta i el seu valor màxim és 640px
 			// if ( window.pos_y_bola > 630 ) { 
-			if ( window.pos_y_bola > 630 ) { 
+			if ( window.pos_y_bola > ( window.radi_bola + window.posicio_y_pala_D + window.mida_y_pala_D )  ) { 
 			
 					//alert("toca dreta") ; alert("x:" + window.pos_x_bola+ " -- y:"+window.pos_y_bola) ; 
 					window.dy = -1 ;
