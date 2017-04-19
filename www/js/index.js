@@ -68,13 +68,17 @@ $(document).on('deviceready', function() {
 	// posicio_x_pala_E,posicio_y_pala_E,mida_x_pala_E,mida_y_pala_E
 	// posicio_x_pala_D,posicio_y_pala_D,mida_x_pala_D,mida_y_pala_D
 	
-	window.posicio_x_pala_E = 10  ;
-	window.posicio_y_pala_E = 130  ;
+	// vermell
+	window.color_pala_E = '#FA5858' ;
+	window.posicio_x_pala_E = 130  ;
+	window.posicio_y_pala_E = 10  ;
 	window.mida_x_pala_E =  100 ;
 	window.mida_y_pala_E =  20 ;
 	
-	window.posicio_x_pala_D = 610  ;
-	window.posicio_y_pala_D = 130  ;
+	// verd
+	window.color_pala_D = '#ACFA58' ;
+	window.posicio_x_pala_D = 130  ;
+	window.posicio_y_pala_D = 610  ;
 	window.mida_x_pala_D =  100 ;
 	window.mida_y_pala_D =  20 ;
 	
@@ -146,7 +150,7 @@ $(document).on('deviceready', function() {
 function dibuixar_pala_esquerra(ctx,posicio_x_pala_E,posicio_y_pala_E,mida_x_pala_E,mida_y_pala_E){
 	
 	ctx.beginPath();
-	   ctx.fillStyle = '#FA5858';
+	   ctx.fillStyle = window.color_pala_E ; // vermella per testejar
 	   ctx.fillRect(posicio_x_pala_E,posicio_y_pala_E,mida_x_pala_E,mida_y_pala_E);
 	ctx.closePath();
 	
@@ -155,7 +159,7 @@ function dibuixar_pala_esquerra(ctx,posicio_x_pala_E,posicio_y_pala_E,mida_x_pal
 function dibuixar_pala_dreta(ctx,posicio_x_pala_D,posicio_y_pala_D,mida_x_pala_D,mida_y_pala_D){
 	
 	ctx.beginPath();
-	   ctx.fillStyle = '#ACFA58';
+	   ctx.fillStyle = window.color_pala_D ; // verda per testejar
 	   ctx.fillRect(posicio_x_pala_D,posicio_y_pala_D,mida_x_pala_D,mida_y_pala_D);
 	ctx.closePath();
 	
