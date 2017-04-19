@@ -59,6 +59,8 @@ $(document).on('deviceready', function() {
 	var mida_y_bola = mida_x_bola ;  // 36 ;
 	window.mida_x_bola = mida_x_bola ;
 	window.mida_y_bola = mida_y_bola ;
+	window.radi_bola =  window.mida_x_bola / 2 ;
+	
 	
 	// x,y => y,x ja que està girada la pantalla // 
 	window.pos_x_bola = ( alcada_pantalla_CSS / 2 )  - ( mida_x_bola / 2 ) ;
@@ -269,6 +271,7 @@ function draw() {
 			}
 			
 			// y augmenta cap a la dreta i el seu valor màxim és 640px
+			// if ( window.pos_y_bola > 630 ) { 
 			if ( window.pos_y_bola > 630 ) { 
 			
 					//alert("toca dreta") ; alert("x:" + window.pos_x_bola+ " -- y:"+window.pos_y_bola) ; 
@@ -276,7 +279,8 @@ function draw() {
 					window.pos_y_bola = window.pos_y_bola + window.dy ;
 					
 			}
-			if ( window.pos_y_bola < 10 ) { 
+			//if ( window.pos_y_bola < 10 ) { 
+			if ( window.pos_y_bola < ( window.radi_bola + window.posicio_y_pala_E + window.mida_y_pala_E )  ) { 
 					
 					// alert("toca esquerra") ; alert("x:" + window.pos_x_bola+ " -- y:"+window.pos_y_bola) ; }
 					window.dy = 1 ;
