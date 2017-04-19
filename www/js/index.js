@@ -72,7 +72,7 @@ $(document).on('deviceready', function() {
 	
 	// vermell
 	window.color_pala_E = '#FA5858' ;
-	window.posicio_x_pala_E = 130  ;
+	window.posicio_x_pala_E = 200  ;
 	window.posicio_y_pala_E = 10  ;
 	window.mida_x_pala_E =  100 ;
 	window.mida_y_pala_E =  20 ;
@@ -181,6 +181,14 @@ function dibuixar_bola(ctx,posicio_x_bola, posicio_y_bola, mida_x_bola) {
 	
 	
 }
+
+function sleep(miliseconds) {
+   var currentTime = new Date().getTime();
+
+   while (currentTime + miliseconds >= new Date().getTime()) {
+   }
+}
+
 function draw() {
 	
 		// alert("cridada la funció DRAW");
@@ -294,7 +302,22 @@ function draw() {
 					{	
 						window.dy = 1 ;
 						window.pos_y_bola = window.pos_y_bola + window.dy ;
-					}	
+					}
+					else if ( window.pos_y_bola < window.radi_bola )  
+					{ 
+					
+						// text punt
+						// actualitzar marcador
+						// audio punt
+						// pausa 
+						sleep(2000);
+						
+						// nova posició
+						window.pos_x_bola = ( alcada_pantalla_CSS / 2 )  - ( mida_x_bola / 2 ) ;
+						window.pos_y_bola = ( amplada_pantalla_CSS / 2 ) - ( mida_y_bola / 2 ) ; ;
+					
+					}
+							
 					
 					
 					
