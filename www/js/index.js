@@ -314,7 +314,7 @@ function draw() {
 			
 			// y augmenta cap a la dreta i el seu valor màxim és 640px
 			// if ( window.pos_y_bola > 630 ) { 
-			if ( window.pos_y_bola > ( window.radi_bola + window.posicio_y_pala_D + window.mida_y_pala_D )  ) { 
+			if ( window.pos_y_bola > ( window.posicio_y_pala_D - window.radi_bola  )  ) { 
 			
 					
 					// si posició x de la bola coincideix amb la barra ha de rebotar
@@ -330,7 +330,7 @@ function draw() {
 						window.dy = -1 ;
 						window.pos_y_bola = window.pos_y_bola + window.dy ;
 					}
-					else if ( window.pos_y_bola < window.radi_bola )  
+					else if ( window.pos_y_bola > ( window.posicio_y_pala_D + window.mida_y_pala_D ) - window.radi_bola )  
 					{ 
 					
 						// text punt
