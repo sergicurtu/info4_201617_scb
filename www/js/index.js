@@ -185,7 +185,7 @@ function dibuixar_bola(ctx,posicio_x_bola, posicio_y_bola, mida_x_bola) {
 function marcador(ctx) {
 	
 	 ctx.font="30px Verdana";
-	 ctx.fillStyle='#FF0000'; // color blanc
+	 ctx.fillStyle='#FF0000'; // color 
 	 ctx.save();
 		 ctx2.translate(centre_x,centre_y); // el centre de gir és la meitat de la pantalla
 		 ctx2.rotate(Math.PI/2);  //  Math.PI == 180º => -(3/2) * 180 = -270  - que seria el mateix que +90 -> 180 / 2 ) 
