@@ -25,7 +25,13 @@ $(document).on('deviceready', function() {
      var ctx = canvas.getContext('2d');
      ctx.canvas.width  = window.innerWidth  ;
      ctx.canvas.height = window.innerHeight  ;
+	 
+	 var canvas2 = document.getElementById('canvas_2');
+     var ctx2 = canvas2.getContext('2d');
+     ctx2.canvas.width  = window.innerWidth  ;
+     ctx2.canvas.height = window.innerHeight  ;
      
+	 
 	// centre pantalla ?
 	var centre_x = amplada_pantalla_CSS / 2 ;
 	var centre_y = alcada_pantalla_CSS / 2 ;  // var centre_y = window.innerHeight / 2 ; //
@@ -182,6 +188,23 @@ function dibuixar_bola(ctx,posicio_x_bola, posicio_y_bola, mida_x_bola) {
 	
 }
 
+function marcador(ctx2) {
+	
+	 ctx2.font="30px Verdana";
+	 ctx2.fillStyle='#FFFFFF'; // color blanc
+	 ctx2.save();
+		 ctx2.translate(centre_x,centre_y); // el centre de gir és la meitat de la pantalla
+		 ctx2.rotate(Math.PI/2);  //  Math.PI == 180º => -(3/2) * 180 = -270  - que seria el mateix que +90 -> 180 / 2 ) 
+		 ctx2.textAlign = "center";
+		 ctx2.fillText("0", 100, 90);
+		 ctx2.fillText("0", 100, 130);
+	 ctx2.restore();
+			
+	
+	
+}
+
+
 function sleep(miliseconds) {
    var currentTime = new Date().getTime();
 
@@ -195,7 +218,12 @@ function draw() {
 		
 		var canvas = document.getElementById('canvas');
 		var ctx = canvas.getContext('2d');
-			
+		
+		var canvas2 = document.getElementById('canvas_2');
+		var ctx2 = canvas2.getContext('2d');
+
+
+		
 		var estat_joc = window.estat_joc ;
 		var mida_x_bola = window.mida_x_bola ;
 		var mida_y_bola = window.mida_y_bola ;
@@ -223,6 +251,8 @@ function draw() {
 			// definim els primers desplaçaments ( aleatoris ? )
 			window.dx = 1 ;
 			window.dy = -1 ;
+			
+			marcador(ctx2);
 			
 		}
 	
@@ -312,16 +342,19 @@ function draw() {
 						// pausa 
 						sleep(2000);
 						
+						marcador(ctx2) ;
+						
+						
 						// nova posició
 						window.pos_x_bola = ( alcada_pantalla_CSS / 2 )  - ( mida_x_bola / 2 ) ;
 						window.pos_y_bola = ( amplada_pantalla_CSS / 2 ) - ( mida_y_bola / 2 ) ; ;
 					
 					}
-							
-					
-					
-					
+		
 			}
+			
+			
+			
 			
 		}
 
