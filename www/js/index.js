@@ -342,7 +342,7 @@ function draw() {
 						// audio punt
 						
 						// pausa 
-						sleep(2000);
+						sleep(1000);
 						
 						// nova posició
 						window.pos_x_bola = ( alcada_pantalla_CSS / 2 )  - ( mida_x_bola / 2 ) ;
@@ -379,7 +379,7 @@ function draw() {
 						// audio punt
 						
 						// pausa 
-						sleep(2000);
+						sleep(1000);
 						
 						// nova posició
 						window.pos_x_bola = ( alcada_pantalla_CSS / 2 )  - ( mida_x_bola / 2 ) ;
