@@ -316,9 +316,39 @@ function draw() {
 			// if ( window.pos_y_bola > 630 ) { 
 			if ( window.pos_y_bola > ( window.radi_bola + window.posicio_y_pala_D + window.mida_y_pala_D )  ) { 
 			
-					//alert("toca dreta") ; alert("x:" + window.pos_x_bola+ " -- y:"+window.pos_y_bola) ; 
-					window.dy = -1 ;
-					window.pos_y_bola = window.pos_y_bola + window.dy ;
+					
+					// si posició x de la bola coincideix amb la barra ha de rebotar
+					// cas contrari avança fins GOL
+					// alert("toca esquerra") ; alert("x:" + window.pos_x_bola+ " -- y:"+window.pos_y_bola) ; }
+					
+					if ( 	 
+							 (   window.pos_x_bola < window.radi_bola + window.posicio_x_pala_D +  window.mida_x_pala_D )
+								 &&
+							 (   window.pos_x_bola > window.posicio_x_pala_D - window.radi_bola  ) 
+						)
+					{	
+						window.dy = -1 ;
+						window.pos_y_bola = window.pos_y_bola + window.dy ;
+					}
+					else if ( window.pos_y_bola < window.radi_bola )  
+					{ 
+					
+						// text punt
+						window.marcador_D
+						
+						// actualitzar marcador
+						marcador(ctx) ;
+						
+						// audio punt
+						
+						// pausa 
+						sleep(2000);
+						
+						// nova posició
+						window.pos_x_bola = ( alcada_pantalla_CSS / 2 )  - ( mida_x_bola / 2 ) ;
+						window.pos_y_bola = ( amplada_pantalla_CSS / 2 ) - ( mida_y_bola / 2 ) ; ;
+					
+					}
 					
 			}
 			//if ( window.pos_y_bola < 10 ) { 
@@ -341,8 +371,13 @@ function draw() {
 					{ 
 					
 						// text punt
+						window.marcador_E
+						
 						// actualitzar marcador
+						marcador(ctx) ;
+						
 						// audio punt
+						
 						// pausa 
 						sleep(2000);
 						
