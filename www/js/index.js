@@ -29,6 +29,9 @@ $(document).on('deviceready', function() {
 	// centre pantalla ?
 	var centre_x = amplada_pantalla_CSS / 2 ;
 	var centre_y = alcada_pantalla_CSS / 2 ;  // var centre_y = window.innerHeight / 2 ; //
+	window.centre_x = centre_x ;
+	window.centre_y = centre_y ;
+	
 	
 	ctx.font="30px Verdana";
 	
@@ -187,7 +190,7 @@ function marcador(ctx) {
 	 ctx.font="30px Verdana";
 	 ctx.fillStyle='#FF0000'; // color 
 	 ctx.save();
-		 ctx.translate(centre_x,centre_y); // el centre de gir és la meitat de la pantalla
+		 ctx.translate(window.centre_x,window.centre_y); // el centre de gir és la meitat de la pantalla
 		 ctx.rotate(Math.PI/2);  //  Math.PI == 180º => -(3/2) * 180 = -270  - que seria el mateix que +90 -> 180 / 2 ) 
 		 ctx.textAlign = "center";
 		 ctx.fillText("0", 100, 90);
