@@ -86,7 +86,7 @@ $(document).on('deviceready', function() {
 	
 	// verd
 	window.color_pala_D = '#ACFA58' ;
-	window.posicio_x_pala_D = 130  ;
+	window.posicio_x_pala_D = 220  ;
 	window.posicio_y_pala_D = 610  ;
 	window.mida_x_pala_D =  100 ;
 	window.mida_y_pala_D =  20 ;
@@ -191,7 +191,7 @@ function dibuixar_bola(ctx,posicio_x_bola, posicio_y_bola, mida_x_bola) {
 
 function marcador(ctx) {
 	
-	 ctx.font="30px Verdana";
+	 ctx.font="60px Verdana";
 	 ctx.fillStyle='#FF0000'; // color 
 	 ctx.save();
 		 ctx.translate(window.centre_x,window.centre_y); // el centre de gir és la meitat de la pantalla
@@ -201,8 +201,8 @@ function marcador(ctx) {
 		 var marcador_E = window.marcador_E.toString() ;
 		 var marcador_D = window.marcador_D.toString() ;
 	
-		 ctx.fillText(marcador_E, 100, 10);
-		 ctx.fillText(marcador_D, 200, 5);
+		 ctx.fillText(marcador_E, 100, -10);
+		 ctx.fillText(marcador_D, 200, -10);
 		 //ctx.fillText("UN TEXT LLARG PER PANTALLA2", 100, 10);
 		 
 		 
@@ -334,7 +334,7 @@ function draw() {
 					{ 
 					
 						// text punt
-						window.marcador_D
+						window.marcador_D = window.marcador_D + 1 ;
 						
 						// actualitzar marcador
 						marcador(ctx) ;
@@ -371,7 +371,7 @@ function draw() {
 					{ 
 					
 						// text punt
-						window.marcador_E
+						window.marcador_E = window.marcador_E + 1 ;
 						
 						// actualitzar marcador
 						marcador(ctx) ;
