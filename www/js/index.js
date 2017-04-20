@@ -334,7 +334,7 @@ function draw() {
 					{ 
 					
 						// text punt
-						window.marcador_D = window.marcador_D + 1 ;
+						window.marcador_E = window.marcador_E + 1 ;
 						
 						// actualitzar marcador
 						marcador(ctx) ;
@@ -371,7 +371,7 @@ function draw() {
 					{ 
 					
 						// text punt
-						window.marcador_E = window.marcador_E + 1 ;
+						window.marcador_D = window.marcador_D + 1 ;
 						
 						// actualitzar marcador
 						marcador(ctx) ;
