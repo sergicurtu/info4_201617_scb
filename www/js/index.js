@@ -187,11 +187,11 @@ function marcador(ctx) {
 	 ctx.font="30px Verdana";
 	 ctx.fillStyle='#FF0000'; // color 
 	 ctx.save();
-		 ctx2.translate(centre_x,centre_y); // el centre de gir és la meitat de la pantalla
-		 ctx2.rotate(Math.PI/2);  //  Math.PI == 180º => -(3/2) * 180 = -270  - que seria el mateix que +90 -> 180 / 2 ) 
-		 ctx2.textAlign = "center";
-		 ctx2.fillText("0", 100, 90);
-		 ctx2.fillText("0", 100, 130);
+		 ctx.translate(centre_x,centre_y); // el centre de gir és la meitat de la pantalla
+		 ctx.rotate(Math.PI/2);  //  Math.PI == 180º => -(3/2) * 180 = -270  - que seria el mateix que +90 -> 180 / 2 ) 
+		 ctx.textAlign = "center";
+		 ctx.fillText("0", 100, 90);
+		 ctx.fillText("0", 100, 130);
 	 ctx.restore();
 			
 	
