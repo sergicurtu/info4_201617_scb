@@ -26,10 +26,10 @@ $(document).on('deviceready', function() {
      ctx.canvas.width  = window.innerWidth  ;
      ctx.canvas.height = window.innerHeight  ;
 	 
-	 var canvas2 = document.getElementById('canvas_2');
+     var canvas2 = document.getElementById('canvas_2');
      var ctx2 = canvas2.getContext('2d');
-     ctx2.canvas.width  = window.innerWidth  ;
-     ctx2.canvas.height = window.innerHeight  ;
+     ctx2.canvas2.width  = window.innerWidth  ;
+     ctx2.canvas2.height = window.innerHeight  ;
      
 	 
 	// centre pantalla ?
