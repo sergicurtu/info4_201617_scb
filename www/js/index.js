@@ -254,7 +254,7 @@ function draw() {
 			
 			// definim els primers desplaçaments ( aleatoris ? )
 			window.dx = 1 ;
-			window.dy = -1 ;
+			window.dy = -2 ;
 			
 			marcador(ctx);
 			
@@ -333,7 +333,7 @@ function draw() {
 							 (   window.pos_x_bola > window.posicio_x_pala_D - window.radi_bola  ) 
 						)
 					{	
-						window.dy = -1 ;
+						window.dy = -2 ;
 						window.pos_y_bola = window.pos_y_bola + window.dy ;
 						
 						var audio = new Audio('audio/pala.mp3')
@@ -375,7 +375,7 @@ function draw() {
   							 (   window.pos_x_bola > window.posicio_x_pala_E - window.radi_bola  ) 
 						)
 					{	
-						window.dy = 1 ;
+						window.dy = 2 ;
 						window.pos_y_bola = window.pos_y_bola + window.dy ;
 						
 						var audio = new Audio('audio/pala.mp3')
