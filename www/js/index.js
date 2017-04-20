@@ -197,8 +197,20 @@ function marcador(ctx) {
 		 ctx.translate(window.centre_x,window.centre_y); // el centre de gir és la meitat de la pantalla
 		 ctx.rotate(Math.PI/2);  //  Math.PI == 180º => -(3/2) * 180 = -270  - que seria el mateix que +90 -> 180 / 2 ) 
 		 ctx.textAlign = "center";
-		 ctx.fillText(window.marcador_E, 100, 90);
-		 ctx.fillText(window.marcador_D, 100, 130);
+		
+		 var marcador_E = window.marcador_E.toString() ;
+		 var marcador_D = window.marcador_D.toString() ;
+	
+		 ctx.fillText(marcador_E, 100, 90);
+		 ctx.fillText(marcador_D, 100, 130);
+		 ctx.fillText("UN TEXT LLARG PER PANTALLA1", 10, 10);
+		 ctx.fillText("UN TEXT LLARG PER PANTALLA2", 100, 10);
+		 ctx.fillText("UN TEXT LLARG PER PANTALLA3", 10, 100);
+		 ctx.fillText("UN TEXT LLARG PER PANTALLA4", 300, 300);
+		 ctx.fillText("UN TEXT LLARG PER PANTALLA5", 600, 300);
+		 ctx.fillText("UN TEXT LLARG PER PANTALLA6", 300, 600);
+		 
+	
 	 ctx.restore();
 			
 	
