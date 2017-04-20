@@ -302,6 +302,9 @@ function draw() {
 					// alert("toca superior") ; alert("x:" + window.pos_x_bola+ " -- y:"+window.pos_y_bola) ;
 					window.dx = -1 ;
 					window.pos_x_bola = window.pos_x_bola + window.dx ;
+					
+					var audio = new Audio('../audio/wall.mp3')
+        				audio.play()
 
 			}
 			if ( window.pos_x_bola < 10 ) { 
@@ -309,6 +312,9 @@ function draw() {
 					//alert("toca inferior") ; alert("x:" + window.pos_x_bola+ " -- y:"+window.pos_y_bola) ; 
 					window.dx = 1 ;
 					window.pos_x_bola = window.pos_x_bola + window.dx ;
+				
+					var audio = new Audio('../audio/wall.mp3')
+        				audio.play()
 			
 			}
 			
@@ -329,6 +335,9 @@ function draw() {
 					{	
 						window.dy = -1 ;
 						window.pos_y_bola = window.pos_y_bola + window.dy ;
+						
+						var audio = new Audio('../audio/pala.mp3')
+        					audio.play()
 					}
 					else if ( window.pos_y_bola > ( window.posicio_y_pala_D + window.mida_y_pala_D ) - window.radi_bola )  
 					{ 
@@ -340,6 +349,8 @@ function draw() {
 						marcador(ctx) ;
 						
 						// audio punt
+						var audio = new Audio('../audio/punt.mp3')
+        					audio.play()
 						
 						// pausa 
 						sleep(1000);
@@ -366,6 +377,9 @@ function draw() {
 					{	
 						window.dy = 1 ;
 						window.pos_y_bola = window.pos_y_bola + window.dy ;
+						
+						var audio = new Audio('../audio/pala.mp3')
+        					audio.play()
 					}
 					else if ( window.pos_y_bola < window.radi_bola )  
 					{ 
@@ -377,6 +391,8 @@ function draw() {
 						marcador(ctx) ;
 						
 						// audio punt
+						var audio = new Audio('../audio/punt.mp3')
+        					audio.play()
 						
 						// pausa 
 						sleep(1000);
