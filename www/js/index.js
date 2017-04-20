@@ -201,14 +201,10 @@ function marcador(ctx) {
 		 var marcador_E = window.marcador_E.toString() ;
 		 var marcador_D = window.marcador_D.toString() ;
 	
-		 ctx.fillText(marcador_E, 100, 90);
-		 ctx.fillText(marcador_D, 100, 130);
-		 ctx.fillText("UN TEXT LLARG PER PANTALLA1", 10, 10);
-		 ctx.fillText("UN TEXT LLARG PER PANTALLA2", 100, 10);
-		 ctx.fillText("UN TEXT LLARG PER PANTALLA3", 10, 100);
-		 ctx.fillText("UN TEXT LLARG PER PANTALLA4", 300, 300);
-		 ctx.fillText("UN TEXT LLARG PER PANTALLA5", 600, 300);
-		 ctx.fillText("UN TEXT LLARG PER PANTALLA6", 300, 600);
+		 ctx.fillText(marcador_E, 100, 10);
+		 ctx.fillText(marcador_D, 200, 5);
+		 //ctx.fillText("UN TEXT LLARG PER PANTALLA2", 100, 10);
+		 
 		 
 	
 	 ctx.restore();
