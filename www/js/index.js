@@ -221,6 +221,12 @@ function sleep(miliseconds) {
    }
 }
 
+function numeroAleatorio(min, max) {
+  return Math.round(Math.random() * (max - min) + min);
+}
+
+
+
 function draw() {
 	
 		// alert("cridada la funció DRAW");
@@ -252,8 +258,8 @@ function draw() {
 	
 			dibuixar_bola(ctx,posicio_x_bola, posicio_y_bola, mida_x_bola);
 			
-			// definim els primers desplaçaments ( aleatoris ? )
-			window.dx = 1 ;
+			// definim els primers desplaçaments ( aleatoris ? ) -> numeroAleatorio(1,2)
+			window.dx = numeroAleatorio(1,2) ;
 			window.dy = -2 ;
 			
 			marcador(ctx);
@@ -357,7 +363,8 @@ function draw() {
 						
 						// nova posició
 						window.pos_x_bola = ( alcada_pantalla_CSS / 2 )  - ( mida_x_bola / 2 ) ;
-						window.pos_y_bola = ( amplada_pantalla_CSS / 2 ) - ( mida_y_bola / 2 ) ; ;
+						window.pos_y_bola = ( amplada_pantalla_CSS / 2 ) - ( mida_y_bola / 2 ) ; 
+						window.dx = numeroAleatorio(1,2) ;
 					
 					}
 					
@@ -399,8 +406,9 @@ function draw() {
 						
 						// nova posició
 						window.pos_x_bola = ( alcada_pantalla_CSS / 2 )  - ( mida_x_bola / 2 ) ;
-						window.pos_y_bola = ( amplada_pantalla_CSS / 2 ) - ( mida_y_bola / 2 ) ; ;
-					
+						window.pos_y_bola = ( amplada_pantalla_CSS / 2 ) - ( mida_y_bola / 2 ) ; 
+						window.dx = numeroAleatorio(1,2) ;
+						
 					}
 		
 			}
