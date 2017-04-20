@@ -350,9 +350,6 @@ function draw() {
 						// pausa 
 						sleep(2000);
 						
-						marcador(ctx) ;
-						
-						
 						// nova posició
 						window.pos_x_bola = ( alcada_pantalla_CSS / 2 )  - ( mida_x_bola / 2 ) ;
 						window.pos_y_bola = ( amplada_pantalla_CSS / 2 ) - ( mida_y_bola / 2 ) ; ;
@@ -361,7 +358,7 @@ function draw() {
 		
 			}
 			
-			
+			marcador(ctx) ;
 			
 			
 		}
