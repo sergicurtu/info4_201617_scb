@@ -310,13 +310,13 @@ function draw() {
 			
 			var imageObj_up_E = new Image();
 			imageObj_up_E.onload = function() {
-				ctx.drawImage(imageObj_up_E, 60, 60);
+				ctx.drawImage(imageObj_up_E, 60, 60, 20, 20);
 			};
 			imageObj_up_E.src = 'img/up.png';
     
 			var imageObj_down_E = new Image();
 			imageObj_down_E.onload = function() {
-				ctx.drawImage(imageObj_down_E, 30, 60);
+				ctx.drawImage(imageObj_down_E, 30, 60, 20, 20);
 			};
 			imageObj_down_E.src = 'img/down.png';			
 			
