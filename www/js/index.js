@@ -23,7 +23,17 @@ $(document).on('deviceready', function() {
 	
 	
      /////////////////////////////////////////////////////////
-     
+     // canvas_fons  //
+     var fons = document.getElementById('canvas_fons');
+     var ctx_fons = canvas.getContext('2d');
+	
+	var imageObj = new Image();
+	imageObj.onload = function() {
+		ctx_fons.drawImage(imageObj, 0, 0, 360, 640);
+	};
+	imageObj.src = 'img/pong_fons.png';
+	
+	
      // REDIMENSIONEM EL CANVAS
      var canvas = document.getElementById('canvas');
      var ctx = canvas.getContext('2d');
@@ -294,14 +304,6 @@ function draw() {
      		var amplada_pantalla_CSS = (window.innerHeight)+10 ;
 			canvas.width=canvas.width;
 			canvas.style.backgroundColor = '#000000' ;
-			
-			// AIXÒ HAURIA D'ESTAR EN UNA CAPA FIXADA
-			var imageObj_up_E = new Image();
-			imageObj_up_E.onload = function() {
-				ctx.drawImage(imageObj_up_E, 0, 0, 360, 640);
-			};
-			imageObj_up_E.src = 'img/pong_fons.png';
-			
 			
 			// linia 1/2 camp
 			ctx.fillStyle="#FFFFFF";
