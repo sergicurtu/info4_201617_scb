@@ -308,10 +308,20 @@ function draw() {
 					
 			dibuixar_bola(ctx,posicio_x_bola, posicio_y_bola, mida_x_bola);
 			
+			var imageObj_up_E = new Image();
+			imageObj_up_E.onload = function() {
+				ctx.drawImage(imageObj_up_E, 60, 60);
+			};
+			imageObj_up_E.src = 'img/up.png';
+    
+			var imageObj_down_E = new Image();
+			imageObj_down_E.onload = function() {
+				ctx.drawImage(imageObj_down_E, 30, 60);
+			};
+			imageObj_down_E.src = 'img/down.png';			
+			
 			
 			// on dibuixarem les pales ?
-			
-			
 			dibuixar_pala_esquerra(ctx,window.posicio_x_pala_E,window.posicio_y_pala_E,window.mida_x_pala_E,window.mida_y_pala_E);
 			dibuixar_pala_dreta(ctx,window.posicio_x_pala_D,window.posicio_y_pala_D,window.mida_x_pala_D,window.mida_y_pala_D);
 			
