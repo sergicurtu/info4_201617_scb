@@ -262,6 +262,7 @@ function draw() {
      			var amplada_pantalla_CSS = (window.innerHeight)+10 ;
 			canvas.width=canvas.width;
 			//canvas.style.backgroundColor = '#000000' ;
+			ctx.clearRect(0,0,window.innerWidth,window.innerHeight);
 			
 			// linia 1/2 camp
 			ctx.fillStyle="#FFFFFF";
@@ -280,11 +281,12 @@ function draw() {
 		if (estat_joc == 1) 
 		{
 			ctx.canvas.width  = window.innerWidth  ;
-     		ctx.canvas.height = window.innerHeight  ;
+     		        ctx.canvas.height = window.innerHeight  ;
 			var alcada_pantalla_CSS = window.innerWidth ;
-     		var amplada_pantalla_CSS = (window.innerHeight)+10 ;
+     		        var amplada_pantalla_CSS = (window.innerHeight)+10 ;
 			canvas.width=canvas.width;
 			//canvas.style.backgroundColor = '#000000' ;
+			ctx.clearRect(0,0,window.innerWidth,window.innerHeight);
 			
 			// linia 1/2 camp
 			ctx.fillStyle="#FFFFFF";
