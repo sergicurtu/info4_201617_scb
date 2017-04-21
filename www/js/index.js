@@ -39,26 +39,7 @@ $(document).on('deviceready', function() {
      var ctx = canvas.getContext('2d');
      ctx.canvas.width  = window.innerWidth  ;
      ctx.canvas.height = window.innerHeight  ;
-	
-     // gamepad //
-     /*	
-     CanvasGamepad.setup(
-        {
-          canvas:"controller",
-          start:{name:"start", key:"b"},
-          select:{name:"select", key:"v"},
-          trace:true,
-          debug:true,
-          hint:true,
-          buttons:[
-            {name:"a", "key":"s"},
-            {name:"b", "key":"a"},
-            {name:"x", "key":"w"},
-            {name:"y", "key":"q"}
-          ]      
-        }
-      );	
-      */	
+		
 	
 	// centre pantalla ?
 	var centre_x = amplada_pantalla_CSS / 2 ;
@@ -280,7 +261,7 @@ function draw() {
 			var alcada_pantalla_CSS = window.innerWidth ;
      			var amplada_pantalla_CSS = (window.innerHeight)+10 ;
 			canvas.width=canvas.width;
-			canvas.style.backgroundColor = '#000000' ;
+			//canvas.style.backgroundColor = '#000000' ;
 			
 			// linia 1/2 camp
 			ctx.fillStyle="#FFFFFF";
@@ -303,7 +284,7 @@ function draw() {
 			var alcada_pantalla_CSS = window.innerWidth ;
      		var amplada_pantalla_CSS = (window.innerHeight)+10 ;
 			canvas.width=canvas.width;
-			canvas.style.backgroundColor = '#000000' ;
+			//canvas.style.backgroundColor = '#000000' ;
 			
 			// linia 1/2 camp
 			ctx.fillStyle="#FFFFFF";
