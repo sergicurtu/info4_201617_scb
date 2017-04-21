@@ -31,6 +31,7 @@ $(document).on('deviceready', function() {
      ctx.canvas.height = window.innerHeight  ;
 	
      // gamepad //
+     /*	
      CanvasGamepad.setup(
         {
           canvas:"controller",
@@ -47,7 +48,7 @@ $(document).on('deviceready', function() {
           ]      
         }
       );	
-	
+      */	
 	
 	// centre pantalla ?
 	var centre_x = amplada_pantalla_CSS / 2 ;
