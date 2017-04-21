@@ -298,7 +298,7 @@ function draw() {
 			// AIXÒ HAURIA D'ESTAR EN UNA CAPA FIXADA
 			var imageObj_up_E = new Image();
 			imageObj_up_E.onload = function() {
-				ctx.drawImage(imageObj_up_E, 0, 0, 640, 360);
+				ctx.drawImage(imageObj_up_E, 0, 0, 360, 640);
 			};
 			imageObj_up_E.src = 'img/pong_fons.png';
 			
