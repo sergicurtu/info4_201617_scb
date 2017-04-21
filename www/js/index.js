@@ -261,7 +261,7 @@ function draw() {
 			var alcada_pantalla_CSS = window.innerWidth ;
      			var amplada_pantalla_CSS = (window.innerHeight)+10 ;
 			canvas.width=canvas.width;
-			//canvas.style.backgroundColor = '#000000' ;
+			canvas.style.backgroundColor = 'transparent' ;
 			ctx.clearRect(0,0,window.innerWidth,window.innerHeight);
 			
 			// linia 1/2 camp
@@ -285,7 +285,7 @@ function draw() {
 			var alcada_pantalla_CSS = window.innerWidth ;
      		        var amplada_pantalla_CSS = (window.innerHeight)+10 ;
 			canvas.width=canvas.width;
-			//canvas.style.backgroundColor = '#000000' ;
+			canvas.style.backgroundColor = 'transparent' ;
 			ctx.clearRect(0,0,window.innerWidth,window.innerHeight);
 			
 			// linia 1/2 camp
