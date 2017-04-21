@@ -295,6 +295,14 @@ function draw() {
 			canvas.width=canvas.width;
 			canvas.style.backgroundColor = '#000000' ;
 			
+			// AIXÒ HAURIA D'ESTAR EN UNA CAPA FIXADA
+			var imageObj_up_E = new Image();
+			imageObj_up_E.onload = function() {
+				ctx.drawImage(imageObj_up_E, 0, 0, 640, 360);
+			};
+			imageObj_up_E.src = 'img/pong_fons.png';
+			
+			
 			// linia 1/2 camp
 			ctx.fillStyle="#FFFFFF";
 			ctx.fillRect(0,(amplada_pantalla_CSS/2)-1,alcada_pantalla_CSS,3);
@@ -307,20 +315,6 @@ function draw() {
 			*/
 					
 			dibuixar_bola(ctx,posicio_x_bola, posicio_y_bola, mida_x_bola);
-			
-			// AIXÒ HAURIA D'ESTAR EN UNA CAPA FIXADA
-			var imageObj_up_E = new Image();
-			imageObj_up_E.onload = function() {
-				ctx.drawImage(imageObj_up_E, 60, 60, 50, 50);
-			};
-			imageObj_up_E.src = 'img/up.png';
-    
-			var imageObj_down_E = new Image();
-			imageObj_down_E.onload = function() {
-				ctx.drawImage(imageObj_down_E, 30, 60, 50, 50);
-			};
-			imageObj_down_E.src = 'img/down.png';			
-			
 			
 			// on dibuixarem les pales ?
 			dibuixar_pala_esquerra(ctx,window.posicio_x_pala_E,window.posicio_y_pala_E,window.mida_x_pala_E,window.mida_y_pala_E);
