@@ -308,15 +308,16 @@ function draw() {
 					
 			dibuixar_bola(ctx,posicio_x_bola, posicio_y_bola, mida_x_bola);
 			
+			// AIXÒ HAURIA D'ESTAR EN UNA CAPA FIXADA
 			var imageObj_up_E = new Image();
 			imageObj_up_E.onload = function() {
-				ctx.drawImage(imageObj_up_E, 60, 60, 20, 20);
+				ctx.drawImage(imageObj_up_E, 60, 60, 50, 50);
 			};
 			imageObj_up_E.src = 'img/up.png';
     
 			var imageObj_down_E = new Image();
 			imageObj_down_E.onload = function() {
-				ctx.drawImage(imageObj_down_E, 30, 60, 20, 20);
+				ctx.drawImage(imageObj_down_E, 30, 60, 50, 50);
 			};
 			imageObj_down_E.src = 'img/down.png';			
 			
