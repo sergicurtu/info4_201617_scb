@@ -25,7 +25,7 @@ $(document).on('deviceready', function() {
      /////////////////////////////////////////////////////////
      // canvas_fons  //
      var fons = document.getElementById('canvas_fons');
-     var ctx_fons = canvas.getContext('2d');
+     var ctx_fons = fons.getContext('2d');
 	
 	var imageObj = new Image();
 	imageObj.onload = function() {
