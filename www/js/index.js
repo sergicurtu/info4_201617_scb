@@ -29,7 +29,7 @@ $(document).on('deviceready', function() {
 	
 	var imageObj = new Image();
 	imageObj.onload = function() {
-		ctx_fons.drawImage(imageObj, 0, 100, 360, 640);
+		ctx_fons.drawImage(imageObj,-50, -50, 360, 640);
 	};
 	imageObj.src = 'img/pong_fons.png';
 	
