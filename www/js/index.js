@@ -284,7 +284,7 @@ function draw() {
 			var alcada_pantalla_CSS = window.innerWidth ;
      		        var amplada_pantalla_CSS = (window.innerHeight)+10 ;
 			canvas.width=canvas.width;
-			$('#canvas').css('background-color', 'rgba(0,0,0,0.2)');
+			$('#canvas').css('background-color', 'rgba(255,255,255,0.2)');
 			ctx.clearRect(0,0,window.innerWidth,window.innerHeight);
 			
 			// linia 1/2 camp
