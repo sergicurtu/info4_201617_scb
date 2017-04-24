@@ -22,18 +22,6 @@ $(document).on('deviceready', function() {
      window.marcador_D = 0 ;	
 	
 	
-     /////////////////////////////////////////////////////////
-     // canvas_fons  //
-     var fons = document.getElementById('canvas_fons');
-     var ctx_fons = fons.getContext('2d');
-	
-	var imageObj = new Image();
-	imageObj.onload = function() {
-		ctx_fons.drawImage(imageObj,-200, -200, 360, 640);
-	};
-	imageObj.src = 'img/pong_fons.png';
-	
-	
      // REDIMENSIONEM EL CANVAS
      var canvas = document.getElementById('canvas');
      var ctx = canvas.getContext('2d');
@@ -275,6 +263,17 @@ function draw() {
 			window.dy = -2 ;
 			
 			marcador(ctx);
+			
+			// canvas_fons  //
+			var fons = document.getElementById('canvas_fons');
+			var ctx_fons = fons.getContext('2d');
+
+				var imageObj = new Image();
+				imageObj.onload = function() {
+					ctx_fons.drawImage(imageObj,-200, -200, 360, 640);
+				};
+				imageObj.src = 'img/pong_fons.png';
+			
 			
 		}
 	
