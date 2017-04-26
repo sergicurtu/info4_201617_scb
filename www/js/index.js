@@ -141,48 +141,38 @@ $(document).on('deviceready', function() {
 		
 		}
 		
-		// tocar ESQUERRA
+		// tocar DOWN
 		if(startx>25 && startx<75){
 			
 			//E_down
-			/*
 			if(starty>125 && starty<175){
-				
-				// alert("E_down");
-				// window.posicio_x_pala_E = window.posicio_x_pala_E - 10 ;
+
 				window.E_down = 1 ;
 				
 			}	
 			//E_up
-			if(starty>95 && starty<145){
+			if(starty>475 && starty<525){
 				
-				// alert("E_up");
-				// window.posicio_x_pala_E = window.posicio_x_pala_E + 10 ;
-				window.E_up = 1
+				window.D_down = 1
 				
 			}
-			*/
+						
 			
-			window.E_down = 1 ;
 			
 		}	
 		
-		// tocar DRETA
-		if(startx>475 && startx<525){
+		// tocar UP
+		if(startx>95 && startx<145){
 			
-			//E_down
-			if(starty>25 && starty<75){
-				
-				// alert("E_down");
-				// window.posicio_x_pala_E = window.posicio_x_pala_E - 10 ;
-				window.D_down = 1 ;
+			//E_up
+			if(starty>125 && starty<175){
+
+				window.E_up = 1 ;
 				
 			}	
-			//E_up
-			if(starty>95 && starty<145){
+			//D_up
+			if(starty>475 && starty<525){
 				
-				// alert("E_up");
-				// window.posicio_x_pala_E = window.posicio_x_pala_E + 10 ;
 				window.D_up = 1
 				
 			}
