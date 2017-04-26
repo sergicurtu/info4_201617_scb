@@ -90,7 +90,10 @@ $(document).on('deviceready', function() {
 	window.mida_x_pala_D =  100 ;
 	window.mida_y_pala_D =  20 ;
 	
-	
+	window.E_down = 0 ;
+	window.E_up = 0 ;
+	window.D_down = 0 ;
+	window.D_up = 0 ;
 	
 	
 	var estat_joc = 0 ;
@@ -138,27 +141,49 @@ $(document).on('deviceready', function() {
 		
 		}
 		
-		// tocar esquerra
+		// tocar ESQUERRA
 		if(startx>125 && startx<175){
 			
 			//E_down
 			if(starty>25 && starty<75){
 				
-				//alert("E_down");
-				window.posicio_x_pala_E = window.posicio_x_pala_E - 10 ;
+				// alert("E_down");
+				// window.posicio_x_pala_E = window.posicio_x_pala_E - 10 ;
+				window.E_down = 1 ;
 				
 			}	
 			//E_up
 			if(starty>95 && starty<145){
 				
-				//alert("E_up");
-				window.posicio_x_pala_E = window.posicio_x_pala_E + 10 ;
+				// alert("E_up");
+				// window.posicio_x_pala_E = window.posicio_x_pala_E + 10 ;
+				window.E_up = 1
 				
 			}
 			
 		}	
 		
-		
+		// tocar DRETA
+		if(startx>475 && startx<525){
+			
+			//E_down
+			if(starty>25 && starty<75){
+				
+				// alert("E_down");
+				// window.posicio_x_pala_E = window.posicio_x_pala_E - 10 ;
+				window.E_down = 1 ;
+				
+			}	
+			//E_up
+			if(starty>95 && starty<145){
+				
+				// alert("E_up");
+				// window.posicio_x_pala_E = window.posicio_x_pala_E + 10 ;
+				window.E_up = 1
+				
+			}
+			
+		}		
 		
 		
 		
@@ -180,6 +205,9 @@ $(document).on('deviceready', function() {
 
 function dibuixar_pala_esquerra(ctx,posicio_x_pala_E,posicio_y_pala_E,mida_x_pala_E,mida_y_pala_E){
 	
+	if ( window.E_down == 1 ) { window.posicio_x_pala_E = window.posicio_x_pala_E - 20 ; window.E_down = 0 ; }
+	if ( window.E_up == 1 ) { window.posicio_x_pala_E = window.posicio_x_pala_E + 20 ; window.E_up = 0 ; }
+	
 	ctx.beginPath();
 	   ctx.fillStyle = window.color_pala_E ; // vermella per testejar
 	   ctx.fillRect(posicio_x_pala_E,posicio_y_pala_E,mida_x_pala_E,mida_y_pala_E);
@@ -188,6 +216,9 @@ function dibuixar_pala_esquerra(ctx,posicio_x_pala_E,posicio_y_pala_E,mida_x_pal
 }
 
 function dibuixar_pala_dreta(ctx,posicio_x_pala_D,posicio_y_pala_D,mida_x_pala_D,mida_y_pala_D){
+
+	if ( window.D_down == 1 ) { window.posicio_x_pala_D = window.posicio_x_pala_D - 20 ; window.D_down = 0 ; }
+	if ( window.D_up == 1 ) { window.posicio_x_pala_D = window.posicio_x_pala_D + 20 ; window.D_up = 0 ; }
 	
 	ctx.beginPath();
 	   ctx.fillStyle = window.color_pala_D ; // verda per testejar
