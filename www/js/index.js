@@ -250,15 +250,11 @@ function marcador(ctx) {
 		
 		 var marcador_E = window.marcador_E.toString() ;
 		 var marcador_D = window.marcador_D.toString() ;
-		 var fps = window.fps.toString() + " fps " ;
+		 
 	
 		 ctx.fillText(marcador_E, 100, -10);
 		 ctx.fillText(marcador_D, 200, -10);
 		 //ctx.fillText("UN TEXT LLARG PER PANTALLA2", 100, 10);
-		 
-		 ctx.font="10px Verdana";
-		 ctx.fillText(fps, 10, -10);
-		 
 	
 	 ctx.restore();
 			
@@ -299,7 +295,7 @@ function draw() {
 		// alert("cridada la funció DRAW");
 		window.thisLoop = new Date;
     		window.fps = 1000 / (window.thisLoop - window.lastLoop);
-    		window.lastLoop = thisLoop;	
+    		window.lastLoop = window.thisLoop;	
 	
 		var canvas = document.getElementById('canvas');
 		var ctx = canvas.getContext('2d');
@@ -346,6 +342,23 @@ function draw() {
 				};
 				imageObj.src = 'img/pong_fons.png';
 			*/
+			
+			// executarem aquesta funció cada segon
+			setInterval(function(){
+				
+				ctx.font="14px Verdana";
+	 			ctx.fillStyle='#FF00FF'; // color 
+	 			
+				ctx.save();
+					
+					var fps = window.fps.toFixed(0)
+					fps = fps.toString() + " fps " ;
+					ctx.fillText(fps, -10, -20);
+				
+				ctx.restore();
+
+			},1000);
+			
 			
 		}
 	
