@@ -128,6 +128,9 @@ $(document).on('deviceready', function() {
 		*/   
 		if ( estat_joc == 0 ) { 
 		
+			// això ens permet mostrar les FPS del JOC	
+			window.lastLoop = new Date;
+			
 			// dibuixem la bola per primera vegada //
 			draw() ;
 			
@@ -247,11 +250,14 @@ function marcador(ctx) {
 		
 		 var marcador_E = window.marcador_E.toString() ;
 		 var marcador_D = window.marcador_D.toString() ;
+		 var fps = window.fps.toString() ;
 	
 		 ctx.fillText(marcador_E, 100, -10);
 		 ctx.fillText(marcador_D, 200, -10);
 		 //ctx.fillText("UN TEXT LLARG PER PANTALLA2", 100, 10);
 		 
+		 ctx.font="10px Verdana";
+		 ctx.fillText(fps, 10, -10);
 		 
 	
 	 ctx.restore();
@@ -291,7 +297,10 @@ function numeroAleatorio(min, max) {
 function draw() {
 	
 		// alert("cridada la funció DRAW");
-		
+		window.thisLoop = new Date;
+    		window.fps = 1000 / (window.thisLoop - window.lastLoop);
+    		window.lastLoop = thisLoop;	
+	
 		var canvas = document.getElementById('canvas');
 		var ctx = canvas.getContext('2d');
 		
