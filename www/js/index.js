@@ -260,9 +260,12 @@ function marcador(ctx) {
 	
 		// imprimim les FPS
 		ctx.font="14px Verdana";
+		ctx.fillStyle='#FF00FF';
 		var fps = window.fps_mitjana.toFixed(0);
 		fps = fps.toString() + " fps " ;
-		ctx.fillText(fps, 10, -10);
+		ctx.fillText(fps, 300, -10);
+		ctx.fillText("2", 400, -20);
+		ctx.fillText("3", 500, -30);
 	
 	 ctx.restore();
 			
