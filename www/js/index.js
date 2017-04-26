@@ -171,7 +171,7 @@ $(document).on('deviceready', function() {
 				
 				// alert("E_down");
 				// window.posicio_x_pala_E = window.posicio_x_pala_E - 10 ;
-				window.E_down = 1 ;
+				window.D_down = 1 ;
 				
 			}	
 			//E_up
@@ -179,7 +179,7 @@ $(document).on('deviceready', function() {
 				
 				// alert("E_up");
 				// window.posicio_x_pala_E = window.posicio_x_pala_E + 10 ;
-				window.E_up = 1
+				window.D_up = 1
 				
 			}
 			
