@@ -324,8 +324,8 @@ function draw() {
 			dibuixar_btn(ctx,100,150,25,color_btn);  
 			
 			var color_btn = 'greeen';
-			dibuixar_btn(ctx,50,150,25,color_btn);  
-			dibuixar_btn(ctx,100,150,25,color_btn);  
+			dibuixar_btn(ctx,50,500,25,color_btn);  
+			dibuixar_btn(ctx,100,500,25,color_btn);  
 			
 			
  
