@@ -263,7 +263,7 @@ function marcador(ctx) {
 		ctx.fillStyle='#FF00FF';
 		var fps = window.fps_mitjana.toFixed(0);
 		fps = fps.toString() + " fps " ;
-		ctx.fillText("2", 400, -30);
+		ctx.fillText(fps, 400, -30);
 	
 	 ctx.restore();
 			
