@@ -115,7 +115,7 @@ $(document).on('deviceready', function() {
 		window.clic_y = starty ;
 		
 		e.preventDefault() ;
-		//alert("Touch_x : " + startx + " --- Touch_y : " + starty);
+		alert("Touch_x : " + startx + " --- Touch_y : " + starty);
 		
 		/*
 		   el estat del joc ens indica com hem de dibuixar les coses
@@ -137,6 +137,10 @@ $(document).on('deviceready', function() {
 							
 		
 		}
+		
+		
+		
+		
 		
 		
 	});	
@@ -321,11 +325,11 @@ function draw() {
 			
 			var color_btn = 'red';
 			dibuixar_btn(ctx,50,150,25,color_btn);  
-			dibuixar_btn(ctx,100,150,25,color_btn);  
+			dibuixar_btn(ctx,120,150,25,color_btn);  
 			
-			var color_btn = 'greeen';
+			var color_btn = 'green';
 			dibuixar_btn(ctx,50,500,25,color_btn);  
-			dibuixar_btn(ctx,100,500,25,color_btn);  
+			dibuixar_btn(ctx,120,500,25,color_btn);  
 			
 			
  
