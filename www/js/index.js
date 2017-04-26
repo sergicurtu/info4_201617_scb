@@ -249,7 +249,7 @@ function draw() {
 			var alcada_pantalla_CSS = window.innerWidth ;
      			var amplada_pantalla_CSS = (window.innerHeight)+10 ;
 			canvas.width=canvas.width;
-			$('#canvas').css('background-color', 'rgba(0,0,0,0.2)');
+			$('#canvas').css('background-color', 'rgba(0,0,0,1)');
 			ctx.clearRect(0,0,window.innerWidth,window.innerHeight);
 			
 			// linia 1/2 camp
@@ -265,6 +265,7 @@ function draw() {
 			marcador(ctx);
 			
 			// canvas_fons  //
+			/*
 			var fons = document.getElementById('canvas_fons');
 			var ctx_fons = fons.getContext('2d');
 
@@ -273,7 +274,7 @@ function draw() {
 					ctx_fons.drawImage(imageObj,-200, -200, 360, 640);
 				};
 				imageObj.src = 'img/pong_fons.png';
-			
+			*/
 			
 		}
 	
