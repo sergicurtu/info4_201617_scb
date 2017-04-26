@@ -212,6 +212,20 @@ function marcador(ctx) {
 	
 }
 
+function dibuixar_btn(x_btn,y_btn,r_btn,color_btn){
+	
+		ctx.beginPath();
+		   ctx.globalAlpha = 0.5;
+		   ctx.arc(x_btn, y_btn, r_btn, 0, 2 * Math.PI, false);
+		   ctx.fillStyle = color_btn ;
+		   ctx.fill();
+		   ctx.lineWidth = 2;
+		   ctx.strokeStyle = color_btn ;
+		   ctx.stroke();
+		   ctx.globalAlpha = 1;
+		ctx.closePath();
+	
+}	
 
 function sleep(miliseconds) {
    var currentTime = new Date().getTime();
@@ -305,49 +319,16 @@ function draw() {
 			dibuixar_pala_esquerra(ctx,window.posicio_x_pala_E,window.posicio_y_pala_E,window.mida_x_pala_E,window.mida_y_pala_E);
 			dibuixar_pala_dreta(ctx,window.posicio_x_pala_D,window.posicio_y_pala_D,window.mida_x_pala_D,window.mida_y_pala_D);
 			
-			      ctx.beginPath();
-			   ctx.globalAlpha = 0.5;
-         ctx.arc(50, 150, 25, 0, 2 * Math.PI, false);
-         ctx.fillStyle = 'red' ;
-			   ctx.fill();
-			   ctx.lineWidth = 2;
-			   ctx.strokeStyle = 'red';
-			   ctx.stroke();
-         ctx.globalAlpha = 1;
-			ctx.closePath();
+			var color_btn='red';
+			dibuixar_btn(50,150,25,color_btn);  
+			dibuixar_btn(100,150,25,color_btn);  
+			
+			var color_btn='greeen';
+			dibuixar_btn(50,150,25,color_btn);  
+			dibuixar_btn(100,150,25,color_btn);  
+			
+			
  
-       ctx.beginPath();
-			   ctx.globalAlpha = 0.5;
-         ctx.arc(150, 150, 25, 0, 2 * Math.PI, false);
-         ctx.fillStyle = 'red' ;
-			   ctx.fill();
-			   ctx.lineWidth = 2;
-			   ctx.strokeStyle = 'red';
-			   ctx.stroke();
-         ctx.globalAlpha = 1;
-			ctx.closePath();
-      
-            ctx.beginPath();
-			   ctx.globalAlpha = 0.5;
-         ctx.arc(50, 500, 25, 0, 2 * Math.PI, false);
-         ctx.fillStyle = 'green' ;
-			   ctx.fill();
-			   ctx.lineWidth = 2;
-			   ctx.strokeStyle = 'green';
-			   ctx.stroke();
-         ctx.globalAlpha = 1;
-			ctx.closePath();
-      
-            ctx.beginPath();
-			   ctx.globalAlpha = 0.5;
-         ctx.arc(150, 500, 25, 0, 2 * Math.PI, false);
-         ctx.fillStyle = 'green' ;
-			   ctx.fill();
-			   ctx.lineWidth = 2;
-			   ctx.strokeStyle = 'green';
-			   ctx.stroke();
-         ctx.globalAlpha = 1;
-			ctx.closePath();
 			
 			window.pos_x_bola = window.pos_x_bola + window.dx ;
 			window.pos_y_bola = window.pos_y_bola + window.dy ;
