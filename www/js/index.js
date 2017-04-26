@@ -351,9 +351,12 @@ function draw() {
 	 			
 				ctx.save();
 					
+					ctx.translate(window.centre_x,window.centre_y); // el centre de gir és la meitat de la pantalla
+					ctx.rotate(Math.PI/2);  //  Math.PI == 180º => -(3/2) * 180 = -270  - que seria el mateix que +90 -> 180 / 2 ) 
+					ctx.textAlign = "center";	
 					var fps = window.fps.toFixed(0)
 					fps = fps.toString() + " fps " ;
-					ctx.fillText(fps, -10, -20);
+					ctx.fillText(fps, 10, -10);
 				
 				ctx.restore();
 
