@@ -115,7 +115,7 @@ $(document).on('deviceready', function() {
 		window.clic_y = starty ;
 		
 		e.preventDefault() ;
-		alert("Touch_x : " + startx + " --- Touch_y : " + starty);
+		//alert("Touch_x : " + startx + " --- Touch_y : " + starty);
 		
 		/*
 		   el estat del joc ens indica com hem de dibuixar les coses
@@ -138,6 +138,25 @@ $(document).on('deviceready', function() {
 		
 		}
 		
+		// tocar esquerra
+		if(startx>125 && starx<175){
+			
+			//E_down
+			if(starty>25 && stary<75){
+				
+				//alert("E_down");
+				window.posicio_x_pala_E = window.posicio_x_pala_E - 10 ;
+				
+			}	
+			//E_up
+			if(starty>95 && stary<145){
+				
+				//alert("E_up");
+				window.posicio_x_pala_E = window.posicio_x_pala_E + 10 ;
+				
+			}
+			
+		}	
 		
 		
 		
