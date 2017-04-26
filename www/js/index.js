@@ -142,10 +142,11 @@ $(document).on('deviceready', function() {
 		}
 		
 		// tocar ESQUERRA
-		if(startx>125 && startx<175){
+		if(startx>25 && startx<75){
 			
 			//E_down
-			if(starty>25 && starty<75){
+			/*
+			if(starty>125 && starty<175){
 				
 				// alert("E_down");
 				// window.posicio_x_pala_E = window.posicio_x_pala_E - 10 ;
@@ -160,6 +161,9 @@ $(document).on('deviceready', function() {
 				window.E_up = 1
 				
 			}
+			*/
+			
+			window.E_down = 1 ;
 			
 		}	
 		
