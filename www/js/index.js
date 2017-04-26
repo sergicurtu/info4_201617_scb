@@ -305,44 +305,48 @@ function draw() {
 			dibuixar_pala_esquerra(ctx,window.posicio_x_pala_E,window.posicio_y_pala_E,window.mida_x_pala_E,window.mida_y_pala_E);
 			dibuixar_pala_dreta(ctx,window.posicio_x_pala_D,window.posicio_y_pala_D,window.mida_x_pala_D,window.mida_y_pala_D);
 			
-			// dibuixar controls
-			ctx.beginPath();
-			   ctx.arc(50, 150, 50, 0, 2 * Math.PI, false);
-			   ctx.fillStyle = 'red';
+			      ctx.beginPath();
+			   ctx.globalAlpha = 0.5;
+         ctx.arc(50, 150, 25, 0, 2 * Math.PI, false);
+         ctx.fillStyle = 'red' ;
 			   ctx.fill();
 			   ctx.lineWidth = 2;
 			   ctx.strokeStyle = 'red';
 			   ctx.stroke();
+         ctx.globalAlpha = 1;
 			ctx.closePath();
-			
-			// dibuixar controls
-			ctx.beginPath();
-			   ctx.arc(120, 150, 50, 0, 2 * Math.PI, false);
-			   ctx.fillStyle = 'green';
-			   ctx.fill();
-			   ctx.lineWidth = 2;
-			   ctx.strokeStyle = 'green';
-			   ctx.stroke();
-			ctx.closePath();
-			
-			// dibuixar controls
-			ctx.beginPath();
-			   ctx.arc(50, 290, 50, 0, 2 * Math.PI, false);
-			   ctx.fillStyle = 'red';
+ 
+       ctx.beginPath();
+			   ctx.globalAlpha = 0.5;
+         ctx.arc(150, 150, 25, 0, 2 * Math.PI, false);
+         ctx.fillStyle = 'red' ;
 			   ctx.fill();
 			   ctx.lineWidth = 2;
 			   ctx.strokeStyle = 'red';
 			   ctx.stroke();
+         ctx.globalAlpha = 1;
 			ctx.closePath();
-			
-			// dibuixar controls
-			ctx.beginPath();
-			   ctx.arc(120 290, 50, 0, 2 * Math.PI, false);
-			   ctx.fillStyle = 'green';
+      
+            ctx.beginPath();
+			   ctx.globalAlpha = 0.5;
+         ctx.arc(50, 500, 25, 0, 2 * Math.PI, false);
+         ctx.fillStyle = 'green' ;
 			   ctx.fill();
 			   ctx.lineWidth = 2;
 			   ctx.strokeStyle = 'green';
 			   ctx.stroke();
+         ctx.globalAlpha = 1;
+			ctx.closePath();
+      
+            ctx.beginPath();
+			   ctx.globalAlpha = 0.5;
+         ctx.arc(150, 500, 25, 0, 2 * Math.PI, false);
+         ctx.fillStyle = 'green' ;
+			   ctx.fill();
+			   ctx.lineWidth = 2;
+			   ctx.strokeStyle = 'green';
+			   ctx.stroke();
+         ctx.globalAlpha = 1;
 			ctx.closePath();
 			
 			window.pos_x_bola = window.pos_x_bola + window.dx ;
