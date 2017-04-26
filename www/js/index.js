@@ -250,7 +250,7 @@ function marcador(ctx) {
 		
 		 var marcador_E = window.marcador_E.toString() ;
 		 var marcador_D = window.marcador_D.toString() ;
-		 var fps = window.fps.toString() ;
+		 var fps = window.fps.toString() + " fps " ;
 	
 		 ctx.fillText(marcador_E, 100, -10);
 		 ctx.fillText(marcador_D, 200, -10);
