@@ -211,16 +211,16 @@ function marcador(ctx) {
 	
 	
 }
-
-function dibuixar_btn(x_btn,y_btn,r_btn,color_btn){
+		
+function dibuixar_btn(ctx,x_btn,y_btn,r_btn,color){
 	
 		ctx.beginPath();
 		   ctx.globalAlpha = 0.5;
 		   ctx.arc(x_btn, y_btn, r_btn, 0, 2 * Math.PI, false);
-		   ctx.fillStyle = color_btn ;
+		   ctx.fillStyle = color ;
 		   ctx.fill();
 		   ctx.lineWidth = 2;
-		   ctx.strokeStyle = color_btn ;
+		   ctx.strokeStyle = color ;
 		   ctx.stroke();
 		   ctx.globalAlpha = 1;
 		ctx.closePath();
@@ -319,13 +319,13 @@ function draw() {
 			dibuixar_pala_esquerra(ctx,window.posicio_x_pala_E,window.posicio_y_pala_E,window.mida_x_pala_E,window.mida_y_pala_E);
 			dibuixar_pala_dreta(ctx,window.posicio_x_pala_D,window.posicio_y_pala_D,window.mida_x_pala_D,window.mida_y_pala_D);
 			
-			var color_btn='red';
-			dibuixar_btn(50,150,25,color_btn);  
-			dibuixar_btn(100,150,25,color_btn);  
+			var color_btn = 'red';
+			dibuixar_btn(ctx,50,150,25,color_btn);  
+			dibuixar_btn(ctx,100,150,25,color_btn);  
 			
-			var color_btn='greeen';
-			dibuixar_btn(50,150,25,color_btn);  
-			dibuixar_btn(100,150,25,color_btn);  
+			var color_btn = 'greeen';
+			dibuixar_btn(ctx,50,150,25,color_btn);  
+			dibuixar_btn(ctx,100,150,25,color_btn);  
 			
 			
  
