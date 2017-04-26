@@ -256,6 +256,12 @@ function marcador(ctx) {
 		 ctx.fillText(marcador_D, 200, -10);
 		 //ctx.fillText("UN TEXT LLARG PER PANTALLA2", 100, 10);
 	
+		// imprimim les FPS
+		ctx.font="14px Verdana";
+		var fps = window.fps_mitjana.toFixed(0)
+		fps = fps.toString() + " fps " ;
+		ctx.fillText(fps, -10, -20);
+	
 	 ctx.restore();
 			
 	
@@ -345,21 +351,11 @@ function draw() {
 			
 			// executarem aquesta funció cada segon
 			setInterval(function(){
+			
+				// el valor a imprimir es renova cada segon
+				// en realitat això no és una mitjana -> falta calcular bé
+				window.fps_mitjana = window.fps ;
 				
-				ctx.font="14px Verdana";
-	 			ctx.fillStyle='#FF00FF'; // color 
-	 			
-				ctx.save();
-					
-					ctx.translate(window.centre_x,window.centre_y); // el centre de gir és la meitat de la pantalla
-					ctx.rotate(Math.PI/2);  //  Math.PI == 180º => -(3/2) * 180 = -270  - que seria el mateix que +90 -> 180 / 2 ) 
-					ctx.textAlign = "center";	
-					var fps = window.fps.toFixed(0)
-					fps = fps.toString() + " fps " ;
-					ctx.fillText(fps, 10, -10);
-				
-				ctx.restore();
-
 			},1000);
 			
 			
