@@ -130,6 +130,8 @@ $(document).on('deviceready', function() {
 		
 			// això ens permet mostrar les FPS del JOC	
 			window.lastLoop = new Date;
+			window.fps_mitjana = 0 ;
+			window.fps = 0 ;
 			
 			// dibuixem la bola per primera vegada //
 			draw() ;
@@ -258,9 +260,9 @@ function marcador(ctx) {
 	
 		// imprimim les FPS
 		ctx.font="14px Verdana";
-		var fps = window.fps_mitjana.toFixed(0)
+		var fps = window.fps_mitjana.toFixed(0);
 		fps = fps.toString() + " fps " ;
-		ctx.fillText(fps, -10, -20);
+		ctx.fillText(fps, 10, -10);
 	
 	 ctx.restore();
 			
