@@ -285,7 +285,7 @@ function draw() {
 			var alcada_pantalla_CSS = window.innerWidth ;
      		        var amplada_pantalla_CSS = (window.innerHeight)+10 ;
 			canvas.width=canvas.width;
-			$('#canvas').css('background-color', 'rgba(255,255,255,0.2)');
+			$('#canvas').css('background-color', 'rgba(0,0,0,1)');
 			ctx.clearRect(0,0,window.innerWidth,window.innerHeight);
 			
 			// linia 1/2 camp
@@ -304,6 +304,46 @@ function draw() {
 			// on dibuixarem les pales ?
 			dibuixar_pala_esquerra(ctx,window.posicio_x_pala_E,window.posicio_y_pala_E,window.mida_x_pala_E,window.mida_y_pala_E);
 			dibuixar_pala_dreta(ctx,window.posicio_x_pala_D,window.posicio_y_pala_D,window.mida_x_pala_D,window.mida_y_pala_D);
+			
+			// dibuixar controls
+			ctx.beginPath();
+			   ctx.arc(50, 150, 50, 0, 2 * Math.PI, false);
+			   ctx.fillStyle = 'red';
+			   ctx.fill();
+			   ctx.lineWidth = 2;
+			   ctx.strokeStyle = 'red';
+			   ctx.stroke();
+			ctx.closePath();
+			
+			// dibuixar controls
+			ctx.beginPath();
+			   ctx.arc(120, 150, 50, 0, 2 * Math.PI, false);
+			   ctx.fillStyle = 'green';
+			   ctx.fill();
+			   ctx.lineWidth = 2;
+			   ctx.strokeStyle = 'green';
+			   ctx.stroke();
+			ctx.closePath();
+			
+			// dibuixar controls
+			ctx.beginPath();
+			   ctx.arc(50, 290, 50, 0, 2 * Math.PI, false);
+			   ctx.fillStyle = 'red';
+			   ctx.fill();
+			   ctx.lineWidth = 2;
+			   ctx.strokeStyle = 'red';
+			   ctx.stroke();
+			ctx.closePath();
+			
+			// dibuixar controls
+			ctx.beginPath();
+			   ctx.arc(120 290, 50, 0, 2 * Math.PI, false);
+			   ctx.fillStyle = 'green';
+			   ctx.fill();
+			   ctx.lineWidth = 2;
+			   ctx.strokeStyle = 'green';
+			   ctx.stroke();
+			ctx.closePath();
 			
 			window.pos_x_bola = window.pos_x_bola + window.dx ;
 			window.pos_y_bola = window.pos_y_bola + window.dy ;
