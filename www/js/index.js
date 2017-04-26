@@ -139,17 +139,17 @@ $(document).on('deviceready', function() {
 		}
 		
 		// tocar esquerra
-		if(startx>125 && starx<175){
+		if(startx>125 && startx<175){
 			
 			//E_down
-			if(starty>25 && stary<75){
+			if(starty>25 && starty<75){
 				
 				//alert("E_down");
 				window.posicio_x_pala_E = window.posicio_x_pala_E - 10 ;
 				
 			}	
 			//E_up
-			if(starty>95 && stary<145){
+			if(starty>95 && starty<145){
 				
 				//alert("E_up");
 				window.posicio_x_pala_E = window.posicio_x_pala_E + 10 ;
